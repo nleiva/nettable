@@ -19,6 +19,7 @@ While the examples presented here were created for an IPv6-only enviroment, addi
     - **isis-nbr**: IS-IS Neigbors (*:isis/instances/instance/neighbors/neighbor*)
   - From *Cisco-IOS-XR-infra-statsd-oper*
     - **int-count**: Interface Counters (*:infra-statistics/interfaces/interface/latest/generic-counters*)
+    - **int-rate**: Interface Data-Rate (*:infra-statistics/interfaces/interface/data-rate*)
 
 ### IS-IS Interfaces
 

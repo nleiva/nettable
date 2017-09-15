@@ -8,11 +8,11 @@ import (
 	"github.com/pkg/errors"
 )
 
-type nbrs struct {
-	list []*nbr
+type inbrs struct {
+	list []*inbr
 }
 
-type nbr struct {
+type inbr struct {
 	remoteID  string
 	fwAddress net.IP
 	local
@@ -24,14 +24,14 @@ type local struct {
 	area     string
 }
 
-func (d *nbrs) Read(file *string) error {
+func (d *inbrs) Read(file *string) error {
 	data := new(ISISNbr)
 	err := decodeTelemetry(data, *file)
 	if err != nil {
 		return errors.Wrap(err, "error decoding JSON file")
 	}
 	for _, b := range data.Rows {
-		i := new(nbr)
+		i := new(inbr)
 		// Hostname
 		i.hostname = data.Telemetry.NodeIDStr
 		// Interface Name
@@ -50,7 +50,7 @@ func (d *nbrs) Read(file *string) error {
 	return nil
 }
 
-func (d *nbrs) displayTable() {
+func (d *inbrs) DisplayTable() {
 	var data [][]string
 	for _, s := range d.list {
 		data = append(data, []string{s.hostname, s.intName, s.area,

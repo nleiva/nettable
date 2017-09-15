@@ -9,11 +9,11 @@ import (
 	"github.com/pkg/errors"
 )
 
-type intfs struct {
-	list []*intf
+type iints struct {
+	list []*iint
 }
 
-type intf struct {
+type iint struct {
 	hostname  string
 	name      string
 	config    string
@@ -33,14 +33,14 @@ type prefix struct {
 	metric uint32
 }
 
-func (d *intfs) Read(file *string) error {
+func (d *iints) Read(file *string) error {
 	data := new(ISISInt)
 	err := decodeTelemetry(data, *file)
 	if err != nil {
 		return errors.Wrap(err, "error decoding JSON file")
 	}
 	for _, b := range data.Rows {
-		i := new(intf)
+		i := new(iint)
 		// Hostname
 		i.hostname = data.Telemetry.NodeIDStr
 		// Interface Name
@@ -73,7 +73,7 @@ func (d *intfs) Read(file *string) error {
 	return nil
 }
 
-func (d *intfs) displayTable() {
+func (d *iints) DisplayTable() {
 	var data [][]string
 	for _, s := range d.list {
 		for _, p := range s.prefixes {

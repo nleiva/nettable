@@ -4,7 +4,7 @@
 
 `nettable` reads an IOS XR Telemetry file and parses relevant info in order to produce a summary table. This exercise is inspired on what was done for [tlvdecode](https://github.com/nleiva/tlvdecode). The goal is to illustrate how to organize telemetry data to facilitate connecting the dots between different data sets. 
 
-While the examples presented here were created for an IPv6-only enviroment, adding IPv4 support is straight forward (TODO).
+While the examples presented here were created in an IPv6-only enviroment, adding IPv4 support is straight forward (TODO).
 
 ## Use
 
@@ -19,7 +19,7 @@ While the examples presented here were created for an IPv6-only enviroment, addi
     - **isis-nbr**: IS-IS Neigbors (*:isis/instances/instance/neighbors/neighbor*)
   - From *Cisco-IOS-XR-infra-statsd-oper*
     - **int-count**: Interface Counters (*:infra-statistics/interfaces/interface/latest/generic-counters*)
-    - **int-rate**: Interface Data-Rate (*:infra-statistics/interfaces/interface/data-rate*)
+    - **int-rate**: Interface Data Rates (*:infra-statistics/interfaces/interface/data-rate*)
 
 ### IS-IS Interfaces
 
@@ -50,10 +50,48 @@ $ ./nettable -f input/isis-nbr.json -i isis-nbr
 
 ### Interface Counters
 
-TODO
+```console
+$ ./nettable -f input/int-count.json -i int-count
++------------------------+---------------------+-----------+-----------+-------------+---------+----------+
+|        HOSTNAME        |      INTERFACE      | PKTS SENT | PKTS RECV | TRANSITIONS | IN ERRS | OUT ERRS |
++------------------------+---------------------+-----------+-----------+-------------+---------+----------+
+| mrstn-5502-1.cisco.com | Null0               |         0 |         0 |           0 |       0 |        0 |
+| mrstn-5502-1.cisco.com | Bundle-Ether20      |    769131 |    768015 |           0 |       0 |        0 |
+| mrstn-5502-1.cisco.com | HundredGigE0/0/0/0  |     43764 |     43753 |           5 |       0 |        0 |
+| mrstn-5502-1.cisco.com | HundredGigE0/0/0/47 |         0 |         0 |           0 |       0 |        0 |
+| mrstn-5502-1.cisco.com | HundredGigE0/0/0/46 |         0 |         0 |           0 |       0 |        0 |
+| mrstn-5502-1.cisco.com | HundredGigE0/0/0/1  |   1846705 |   1740573 |          19 |       0 |        0 |
+<snip>
+| mrstn-5502-1.cisco.com | HundredGigE0/0/0/21 |    461053 |    461742 |           4 |       0 |        0 |
+| mrstn-5502-1.cisco.com | HundredGigE0/0/0/22 |    308078 |    306273 |           4 |       0 |        0 |
+<snip>
+| mrstn-5502-1.cisco.com | FortyGigE0/0/0/34   |         0 |         0 |           0 |       0 |        0 |
+| mrstn-5502-1.cisco.com | FortyGigE0/0/0/38   |         0 |         0 |           0 |       0 |        0 |
++------------------------+---------------------+-----------+-----------+-------------+---------+----------+
+```
+
+### Interface Data Rates
 
 ```console
-
+$./nettable -f input/int-rate.json -i int-rate
++------------------------+---------------------+--------------+---------------+-----------+
+|        HOSTNAME        |      INTERFACE      | IN DATA RATE | OUT DATA RATE |    BW     |
++------------------------+---------------------+--------------+---------------+-----------+
+| mrstn-5502-1.cisco.com | Null0               |            0 |             0 |         0 |
+| mrstn-5502-1.cisco.com | Bundle-Ether20      |            0 |             0 |         0 |
+| mrstn-5502-1.cisco.com | HundredGigE0/0/0/0  |          293 |           293 | 100000000 |
+| mrstn-5502-1.cisco.com | HundredGigE0/0/0/47 |            0 |             0 | 100000000 |
+| mrstn-5502-1.cisco.com | HundredGigE0/0/0/46 |            0 |             0 | 100000000 |
+| mrstn-5502-1.cisco.com | HundredGigE0/0/0/1  |            7 |            10 | 100000000 |
+<snip>
+| mrstn-5502-1.cisco.com | HundredGigE0/0/0/20 |            0 |             0 | 100000000 |
+| mrstn-5502-1.cisco.com | HundredGigE0/0/0/21 |            0 |             0 | 100000000 |
+| mrstn-5502-1.cisco.com | HundredGigE0/0/0/22 |            0 |             0 | 100000000 |
+<snip>
+| mrstn-5502-1.cisco.com | FortyGigE0/0/0/34   |            0 |             0 |  40000000 |
+| mrstn-5502-1.cisco.com | FortyGigE0/0/0/38   |            0 |             0 |  40000000 |
++------------------------+---------------------+--------------+---------------+-----------+
+nleiva@nettable$
 ```
 
 ## Links

@@ -13,31 +13,31 @@ type ISISLsp struct {
 				LocalLspFlag                   bool   `json:"local_lsp_flag,omitempty"`
 				LspActiveFlag                  bool   `json:"lsp_active_flag,omitempty"`
 				LspAttachedFlag                bool   `json:"lsp_attached_flag,omitempty"`
-				LspChecksum                    int64  `json:"lsp_checksum,omitempty"`
-				LspHoldtime                    int64  `json:"lsp_holdtime,omitempty"`
+				LspChecksum                    uint32 `json:"lsp_checksum,omitempty"`
+				LspHoldtime                    uint32 `json:"lsp_holdtime,omitempty"`
 				LspID                          string `json:"lsp_id,omitempty"`
-				LspLength                      int64  `json:"lsp_length,omitempty"`
+				LspLength                      uint32 `json:"lsp_length,omitempty"`
 				LspLevel                       string `json:"lsp_level,omitempty"`
-				LspNonV1AFlag                  int64  `json:"lsp_non_v1_a_flag,omitempty"`
+				LspNonV1AFlag                  uint32 `json:"lsp_non_v1_a_flag,omitempty"`
 				LspOverloadedFlag              bool   `json:"lsp_overloaded_flag,omitempty"`
 				LspParitionRepairSupportedFlag bool   `json:"lsp_parition_repair_supported_flag,omitempty"`
-				LspSequenceNumber              int64  `json:"lsp_sequence_number,omitempty"`
+				LspSequenceNumber              uint32 `json:"lsp_sequence_number,omitempty"`
 			} `json:"lsp_header_data,omitempty"`
 		} `json:"Content,omitempty"`
 		Keys struct {
 			InstanceName string `json:"instance_name,omitempty"`
-			Level        int64  `json:"level,string,omitempty"`
+			Level        string `json:"level,string,omitempty"`
 			LspID        string `json:"lsp_id,omitempty"`
 		} `json:"Keys,omitempty"`
-		Timestamp int64 `json:"Timestamp,omitempty"`
+		Timestamp uint64 `json:"Timestamp,omitempty"`
 	} `json:"Rows,omitempty"`
 	Source    string `json:"Source,omitempty"`
 	Telemetry struct {
-		CollectionEndTime   int64  `json:"collection_end_time,omitempty"`
-		CollectionID        int64  `json:"collection_id,omitempty"`
-		CollectionStartTime int64  `json:"collection_start_time,omitempty"`
+		CollectionEndTime   uint64 `json:"collection_end_time,omitempty"`
+		CollectionID        uint64 `json:"collection_id,omitempty"`
+		CollectionStartTime uint64 `json:"collection_start_time,omitempty"`
 		EncodingPath        string `json:"encoding_path,omitempty"`
-		MsgTimestamp        int64  `json:"msg_timestamp,omitempty"`
+		MsgTimestamp        uint64 `json:"msg_timestamp,omitempty"`
 		NodeIDStr           string `json:"node_id_str,omitempty"`
 		SubscriptionIDStr   string `json:"subscription_id_str,omitempty"`
 	} `json:"Telemetry,omitempty"`
@@ -69,10 +69,10 @@ type ISISInt struct {
 						Status string `json:"status,omitempty"`
 					} `json:"adv_prefix_status,omitempty"`
 					BfdData struct {
-						Enabled     bool  `json:"enabled,omitempty"`
-						Interval    int64 `json:"interval,omitempty"`
-						Ipv6Enabled bool  `json:"ipv6_enabled,omitempty"`
-						Multiplier  int64 `json:"multiplier,omitempty"`
+						Enabled     bool   `json:"enabled,omitempty"`
+						Interval    uint32 `json:"interval,omitempty"`
+						Ipv6Enabled bool   `json:"ipv6_enabled,omitempty"`
+						Multiplier  uint32 `json:"multiplier,omitempty"`
 					} `json:"bfd_data,omitempty"`
 					ClnsData struct {
 						ClnsStatus struct {
@@ -85,8 +85,8 @@ type ISISInt struct {
 						LastLspLevelTransmitted  string `json:"last_lsp_level_transmitted,omitempty"`
 						LspTransmitRequestedFlag bool   `json:"lsp_transmit_requested_flag,omitempty"`
 						LspTransmittedFlag       bool   `json:"lsp_transmitted_flag,omitempty"`
-						LspTxmitdB2BLimit        int64  `json:"lsp_txmitd_b2_b_limit,omitempty"`
-						LspTxmtB2BMsecs          int64  `json:"lsp_txmt_b2_b_msecs,omitempty"`
+						LspTxmitdB2BLimit        uint32 `json:"lsp_txmitd_b2_b_limit,omitempty"`
+						LspTxmtB2BMsecs          uint32 `json:"lsp_txmt_b2_b_msecs,omitempty"`
 						MediaSpecificState       struct {
 							ClnsMediaType string `json:"clns_media_type,omitempty"`
 							ClnsP2PData   struct {
@@ -98,7 +98,7 @@ type ISISInt struct {
 							} `json:"clns_p2_p_data,omitempty"`
 						} `json:"media_specific_state,omitempty"`
 						MtuInfo struct {
-							Mtu    int64  `json:"mtu,omitempty"`
+							Mtu    uint32 `json:"mtu,omitempty"`
 							Status string `json:"status,omitempty"`
 						} `json:"mtu_info,omitempty"`
 						SnpaState struct {
@@ -107,11 +107,11 @@ type ISISInt struct {
 							} `json:"known,omitempty"`
 							Status string `json:"status,omitempty"`
 						} `json:"snpa_state,omitempty"`
-						TimeUntilNextLsp int64 `json:"time_until_next_lsp,omitempty"`
+						TimeUntilNextLsp uint32 `json:"time_until_next_lsp,omitempty"`
 					} `json:"clns_data,omitempty"`
 					EnabledCircuitType   string `json:"enabled_circuit_type,omitempty"`
 					InterfaceMediaType   string `json:"interface_media_type,omitempty"`
-					LocalCircuitNumber   int64  `json:"local_circuit_number,omitempty"`
+					LocalCircuitNumber   uint32 `json:"local_circuit_number,omitempty"`
 					PerAddressFamilyData []struct {
 						AfName   string `json:"af_name,omitempty"`
 						AfStatus struct {
@@ -167,25 +167,25 @@ type ISISInt struct {
 									} `json:"disabled,omitempty"`
 									Status string `json:"status,omitempty"`
 								} `json:"adv_prefix_status,omitempty"`
-								LdPv6SyncStatus       bool  `json:"ld_pv6_sync_status,omitempty"`
-								LdpSyncStatus         bool  `json:"ldp_sync_status,omitempty"`
-								Level1LdpSyncEnabled  bool  `json:"level1_ldp_sync_enabled,omitempty"`
-								Level1LkgpConfigured  bool  `json:"level1_lkgp_configured,omitempty"`
-								Level1Metric          int64 `json:"level1_metric,omitempty"`
-								Level1OffsetMetric    int64 `json:"level1_offset_metric,omitempty"`
-								Level1PpConfigured    bool  `json:"level1_pp_configured,omitempty"`
-								Level1PpMetric        int64 `json:"level1_pp_metric,omitempty"`
-								Level1Weight          int64 `json:"level1_weight,omitempty"`
-								Level2LdpSyncEnabled  bool  `json:"level2_ldp_sync_enabled,omitempty"`
-								Level2LkgpConfigured  bool  `json:"level2_lkgp_configured,omitempty"`
-								Level2Metric          int64 `json:"level2_metric,omitempty"`
-								Level2OffsetMetric    int64 `json:"level2_offset_metric,omitempty"`
-								Level2PpConfigured    bool  `json:"level2_pp_configured,omitempty"`
-								Level2PpMetric        int64 `json:"level2_pp_metric,omitempty"`
-								Level2Weight          int64 `json:"level2_weight,omitempty"`
-								MaxBkpLabelSupported  int64 `json:"max_bkp_label_supported,omitempty"`
-								MaxLabelSupported     int64 `json:"max_label_supported,omitempty"`
-								MaxSrteLabelSupported int64 `json:"max_srte_label_supported,omitempty"`
+								LdPv6SyncStatus       bool   `json:"ld_pv6_sync_status,omitempty"`
+								LdpSyncStatus         bool   `json:"ldp_sync_status,omitempty"`
+								Level1LdpSyncEnabled  bool   `json:"level1_ldp_sync_enabled,omitempty"`
+								Level1LkgpConfigured  bool   `json:"level1_lkgp_configured,omitempty"`
+								Level1Metric          uint32 `json:"level1_metric,omitempty"`
+								Level1OffsetMetric    uint32 `json:"level1_offset_metric,omitempty"`
+								Level1PpConfigured    bool   `json:"level1_pp_configured,omitempty"`
+								Level1PpMetric        uint32 `json:"level1_pp_metric,omitempty"`
+								Level1Weight          uint32 `json:"level1_weight,omitempty"`
+								Level2LdpSyncEnabled  bool   `json:"level2_ldp_sync_enabled,omitempty"`
+								Level2LkgpConfigured  bool   `json:"level2_lkgp_configured,omitempty"`
+								Level2Metric          uint32 `json:"level2_metric,omitempty"`
+								Level2OffsetMetric    uint32 `json:"level2_offset_metric,omitempty"`
+								Level2PpConfigured    bool   `json:"level2_pp_configured,omitempty"`
+								Level2PpMetric        uint32 `json:"level2_pp_metric,omitempty"`
+								Level2Weight          uint32 `json:"level2_weight,omitempty"`
+								MaxBkpLabelSupported  uint32 `json:"max_bkp_label_supported,omitempty"`
+								MaxLabelSupported     uint32 `json:"max_label_supported,omitempty"`
+								MaxSrteLabelSupported uint32 `json:"max_srte_label_supported,omitempty"`
 							} `json:"enabled,omitempty"`
 							Status string `json:"status,omitempty"`
 						} `json:"status,omitempty"`
@@ -201,22 +201,22 @@ type ISISInt struct {
 				Status string `json:"status,omitempty"`
 			} `json:"interface_status_and_data,omitempty"`
 			IsType    string `json:"is_type,omitempty"`
-			MeshGroup int64  `json:"mesh_group,omitempty"`
+			MeshGroup uint32 `json:"mesh_group,omitempty"`
 			NsrIntf   bool   `json:"nsr_intf,omitempty"`
 		} `json:"Content,omitempty"`
 		Keys struct {
 			InstanceName  string `json:"instance_name,omitempty"`
 			InterfaceName string `json:"interface_name,omitempty"`
 		} `json:"Keys,omitempty"`
-		Timestamp int64 `json:"Timestamp,omitempty"`
+		Timestamp uint64 `json:"Timestamp,omitempty"`
 	} `json:"Rows,omitempty"`
 	Source    string `json:"Source,omitempty"`
 	Telemetry struct {
-		CollectionEndTime   int64  `json:"collection_end_time,omitempty"`
-		CollectionID        int64  `json:"collection_id,omitempty"`
-		CollectionStartTime int64  `json:"collection_start_time,omitempty"`
+		CollectionEndTime   uint64 `json:"collection_end_time,omitempty"`
+		CollectionID        uint64 `json:"collection_id,omitempty"`
+		CollectionStartTime uint64 `json:"collection_start_time,omitempty"`
 		EncodingPath        string `json:"encoding_path,omitempty"`
-		MsgTimestamp        int64  `json:"msg_timestamp,omitempty"`
+		MsgTimestamp        uint64 `json:"msg_timestamp,omitempty"`
 		NodeIDStr           string `json:"node_id_str,omitempty"`
 		SubscriptionIDStr   string `json:"subscription_id_str,omitempty"`
 	} `json:"Telemetry,omitempty"`
@@ -233,8 +233,8 @@ type ISISNbr struct {
 				Value string `json:"value,omitempty"`
 			} `json:"neighbor_active_area_addresses,omitempty"`
 			NeighborCircuitType          string `json:"neighbor_circuit_type,omitempty"`
-			NeighborHoldtime             int64  `json:"neighbor_holdtime,omitempty"`
-			NeighborIetfNsfCapableFlag   int64  `json:"neighbor_ietf_nsf_capable_flag,omitempty"`
+			NeighborHoldtime             uint32 `json:"neighbor_holdtime,omitempty"`
+			NeighborIetfNsfCapableFlag   uint32 `json:"neighbor_ietf_nsf_capable_flag,omitempty"`
 			NeighborMediaType            string `json:"neighbor_media_type,omitempty"`
 			NeighborPerAddressFamilyData []struct {
 				AfName string `json:"af_name,omitempty"`
@@ -248,7 +248,7 @@ type ISISNbr struct {
 			NeighborSnpa            string `json:"neighbor_snpa,omitempty"`
 			NeighborState           string `json:"neighbor_state,omitempty"`
 			NeighborSystemID        string `json:"neighbor_system_id,omitempty"`
-			NeighborUptime          int64  `json:"neighbor_uptime,omitempty"`
+			NeighborUptime          uint32 `json:"neighbor_uptime,omitempty"`
 			NeighborUptimeValidFlag bool   `json:"neighbor_uptime_valid_flag,omitempty"`
 			NsrStandby              bool   `json:"nsr_standby,omitempty"`
 			TopologiesSupported     []struct {
@@ -263,15 +263,112 @@ type ISISNbr struct {
 			InterfaceName string `json:"interface_name,omitempty"`
 			SystemID      string `json:"system_id,omitempty"`
 		} `json:"Keys,omitempty"`
-		Timestamp int64 `json:"Timestamp,omitempty"`
+		Timestamp uint64 `json:"Timestamp,omitempty"`
 	} `json:"Rows,omitempty"`
 	Source    string `json:"Source,omitempty"`
 	Telemetry struct {
-		CollectionEndTime   int64  `json:"collection_end_time,omitempty"`
-		CollectionID        int64  `json:"collection_id,omitempty"`
-		CollectionStartTime int64  `json:"collection_start_time,omitempty"`
+		CollectionEndTime   uint64 `json:"collection_end_time,omitempty"`
+		CollectionID        uint64 `json:"collection_id,omitempty"`
+		CollectionStartTime uint64 `json:"collection_start_time,omitempty"`
 		EncodingPath        string `json:"encoding_path,omitempty"`
-		MsgTimestamp        int64  `json:"msg_timestamp,omitempty"`
+		MsgTimestamp        uint64 `json:"msg_timestamp,omitempty"`
+		NodeIDStr           string `json:"node_id_str,omitempty"`
+		SubscriptionIDStr   string `json:"subscription_id_str,omitempty"`
+	} `json:"Telemetry,omitempty"`
+}
+
+// IntCount represents the format of a Cisco-IOS-XR-infra-statsd-oper
+// :infra-statistics/interfaces/interface/latest/generic-counters
+// message.
+type IntCount struct {
+	Rows []struct {
+		Content struct {
+			Applique                       uint32 `json:"applique,omitempty"`
+			AvailabilityFlag               uint32 `json:"availability_flag,omitempty"`
+			BroadcastPacketsReceived       uint64 `json:"broadcast_packets_received,omitempty"`
+			BroadcastPacketsSent           uint64 `json:"broadcast_packets_sent,omitempty"`
+			BytesReceived                  uint64 `json:"bytes_received,omitempty"`
+			BytesSent                      uint64 `json:"bytes_sent,omitempty"`
+			CarrierTransitions             uint32 `json:"carrier_transitions,omitempty"`
+			CrcErrors                      uint32 `json:"crc_errors,omitempty"`
+			FramingErrorsReceived          uint32 `json:"framing_errors_received,omitempty"`
+			GiantPacketsReceived           uint32 `json:"giant_packets_received,omitempty"`
+			InputAborts                    uint32 `json:"input_aborts,omitempty"`
+			InputDrops                     uint32 `json:"input_drops,omitempty"`
+			InputErrors                    uint32 `json:"input_errors,omitempty"`
+			InputIgnoredPackets            uint32 `json:"input_ignored_packets,omitempty"`
+			InputOverruns                  uint32 `json:"input_overruns,omitempty"`
+			InputQueueDrops                uint32 `json:"input_queue_drops,omitempty"`
+			LastDataTime                   uint32 `json:"last_data_time,omitempty"`
+			LastDiscontinuityTime          uint32 `json:"last_discontinuity_time,omitempty"`
+			MulticastPacketsReceived       uint64 `json:"multicast_packets_received,omitempty"`
+			MulticastPacketsSent           uint64 `json:"multicast_packets_sent,omitempty"`
+			OutputBufferFailures           uint32 `json:"output_buffer_failures,omitempty"`
+			OutputBuffersSwappedOut        uint32 `json:"output_buffers_swapped_out,omitempty"`
+			OutputDrops                    uint32 `json:"output_drops,omitempty"`
+			OutputErrors                   uint32 `json:"output_errors,omitempty"`
+			OutputQueueDrops               uint32 `json:"output_queue_drops,omitempty"`
+			OutputUnderruns                uint32 `json:"output_underruns,omitempty"`
+			PacketsReceived                uint64 `json:"packets_received,omitempty"`
+			PacketsSent                    uint64 `json:"packets_sent,omitempty"`
+			ParityPacketsReceived          uint32 `json:"parity_packets_received,omitempty"`
+			Resets                         uint32 `json:"resets,omitempty"`
+			RuntPacketsReceived            uint32 `json:"runt_packets_received,omitempty"`
+			SecondsSinceLastClearCounters  uint32 `json:"seconds_since_last_clear_counters,omitempty"`
+			SecondsSincePacketReceived     uint32 `json:"seconds_since_packet_received,omitempty"`
+			SecondsSincePacketSent         uint32 `json:"seconds_since_packet_sent,omitempty"`
+			ThrottledPacketsReceived       uint32 `json:"throttled_packets_received,omitempty"`
+			UnknownProtocolPacketsReceived uint32 `json:"unknown_protocol_packets_received,omitempty"`
+		} `json:"Content,omitempty"`
+		Keys struct {
+			InterfaceName string `json:"interface_name,omitempty"`
+		} `json:"Keys,omitempty"`
+		Timestamp uint64 `json:"Timestamp,omitempty"`
+	} `json:"Rows,omitempty"`
+	Source    string `json:"Source,omitempty"`
+	Telemetry struct {
+		CollectionEndTime   uint64 `json:"collection_end_time,omitempty"`
+		CollectionID        uint64 `json:"collection_id,omitempty"`
+		CollectionStartTime uint64 `json:"collection_start_time,omitempty"`
+		EncodingPath        string `json:"encoding_path,omitempty"`
+		MsgTimestamp        uint64 `json:"msg_timestamp,omitempty"`
+		NodeIDStr           string `json:"node_id_str,omitempty"`
+		SubscriptionIDStr   string `json:"subscription_id_str,omitempty"`
+	} `json:"Telemetry,omitempty"`
+}
+
+// IntRate represents the format of a Cisco-IOS-XR-infra-statsd-oper
+// :infra-statistics/interfaces/interface/data-rate
+// message.
+type IntRate struct {
+	Rows []struct {
+		Content struct {
+			Bandwidth            uint32 `json:"bandwidth,omitempty"`
+			InputDataRate        uint64 `json:"input_data_rate,omitempty"`
+			InputLoad            uint32 `json:"input_load,omitempty"`
+			InputPacketRate      uint64 `json:"input_packet_rate,omitempty"`
+			LoadInterval         uint32 `json:"load_interval,omitempty"`
+			OutputDataRate       uint64 `json:"output_data_rate,omitempty"`
+			OutputLoad           uint32 `json:"output_load,omitempty"`
+			OutputPacketRate     uint64 `json:"output_packet_rate,omitempty"`
+			PeakInputDataRate    uint64 `json:"peak_input_data_rate,omitempty"`
+			PeakInputPacketRate  uint64 `json:"peak_input_packet_rate,omitempty"`
+			PeakOutputDataRate   uint64 `json:"peak_output_data_rate,omitempty"`
+			PeakOutputPacketRate uint64 `json:"peak_output_packet_rate,omitempty"`
+			Reliability          uint32 `json:"reliability,omitempty"`
+		} `json:"Content,omitempty"`
+		Keys struct {
+			InterfaceName string `json:"interface_name,omitempty"`
+		} `json:"Keys,omitempty"`
+		Timestamp uint64 `json:"Timestamp,omitempty"`
+	} `json:"Rows,omitempty"`
+	Source    string `json:"Source,omitempty"`
+	Telemetry struct {
+		CollectionEndTime   uint64 `json:"collection_end_time,omitempty"`
+		CollectionID        uint64 `json:"collection_id,omitempty"`
+		CollectionStartTime uint64 `json:"collection_start_time,omitempty"`
+		EncodingPath        string `json:"encoding_path,omitempty"`
+		MsgTimestamp        uint64 `json:"msg_timestamp,omitempty"`
 		NodeIDStr           string `json:"node_id_str,omitempty"`
 		SubscriptionIDStr   string `json:"subscription_id_str,omitempty"`
 	} `json:"Telemetry,omitempty"`

@@ -14,31 +14,37 @@ func check(err error, msg string) {
 	}
 }
 
-type parser interface {
+// Parser is a Telemetry message that can be read and transformed to a
+// summary table
+type Parser interface {
 	Read(file *string) error
-	displayTable()
+	DisplayTable()
 }
 
-func parseTelemetry(p parser, f *string) error {
+func parseTelemetry(p Parser, f *string) error {
 	err := p.Read(f)
 	if err != nil {
 		return errors.Wrap(err, "error reading file")
 	}
-	p.displayTable()
+	p.DisplayTable()
 	return nil
 }
 
 func main() {
-	var container parser
+	var container Parser
 	file := flag.String("f", "input/isis-int.json", "Input file")
 	info := flag.String("i", "isis-int", "Type of information")
 	flag.Parse()
 
 	switch *info {
 	case "isis-int":
-		container = new(intfs)
+		container = new(iints)
 	case "isis-nbr":
-		container = new(nbrs)
+		container = new(inbrs)
+	case "int-count":
+		container = new(icounts)
+	case "int-rate":
+		container = new(irates)
 	default:
 		log.Fatalf("Type of info unknown: %s", *info)
 	}

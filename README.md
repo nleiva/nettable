@@ -61,10 +61,10 @@ $ ./nettable -f input/int-count.json -i int-count
 | mrstn-5502-1.cisco.com | HundredGigE0/0/0/47 |         0 |         0 |           0 |       0 |        0 |
 | mrstn-5502-1.cisco.com | HundredGigE0/0/0/46 |         0 |         0 |           0 |       0 |        0 |
 | mrstn-5502-1.cisco.com | HundredGigE0/0/0/1  |   1846705 |   1740573 |          19 |       0 |        0 |
-<snip>
+...
 | mrstn-5502-1.cisco.com | HundredGigE0/0/0/21 |    461053 |    461742 |           4 |       0 |        0 |
 | mrstn-5502-1.cisco.com | HundredGigE0/0/0/22 |    308078 |    306273 |           4 |       0 |        0 |
-<snip>
+...
 | mrstn-5502-1.cisco.com | FortyGigE0/0/0/34   |         0 |         0 |           0 |       0 |        0 |
 | mrstn-5502-1.cisco.com | FortyGigE0/0/0/38   |         0 |         0 |           0 |       0 |        0 |
 +------------------------+---------------------+-----------+-----------+-------------+---------+----------+
@@ -73,7 +73,7 @@ $ ./nettable -f input/int-count.json -i int-count
 ### Interface Data Rates
 
 ```console
-$./nettable -f input/int-rate.json -i int-rate
+$ ./nettable -f input/int-rate.json -i int-rate
 +------------------------+---------------------+--------------+---------------+-----------+
 |        HOSTNAME        |      INTERFACE      | IN DATA RATE | OUT DATA RATE |    BW     |
 +------------------------+---------------------+--------------+---------------+-----------+
@@ -83,15 +83,14 @@ $./nettable -f input/int-rate.json -i int-rate
 | mrstn-5502-1.cisco.com | HundredGigE0/0/0/47 |            0 |             0 | 100000000 |
 | mrstn-5502-1.cisco.com | HundredGigE0/0/0/46 |            0 |             0 | 100000000 |
 | mrstn-5502-1.cisco.com | HundredGigE0/0/0/1  |            7 |            10 | 100000000 |
-<snip>
+...
 | mrstn-5502-1.cisco.com | HundredGigE0/0/0/20 |            0 |             0 | 100000000 |
 | mrstn-5502-1.cisco.com | HundredGigE0/0/0/21 |            0 |             0 | 100000000 |
 | mrstn-5502-1.cisco.com | HundredGigE0/0/0/22 |            0 |             0 | 100000000 |
-<snip>
+...
 | mrstn-5502-1.cisco.com | FortyGigE0/0/0/34   |            0 |             0 |  40000000 |
 | mrstn-5502-1.cisco.com | FortyGigE0/0/0/38   |            0 |             0 |  40000000 |
 +------------------------+---------------------+--------------+---------------+-----------+
-nleiva@nettable$
 ```
 
 ## Links

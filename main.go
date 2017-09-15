@@ -38,13 +38,13 @@ func main() {
 
 	switch *info {
 	case "isis-int":
-		container = new(iints)
+		container = new(Iints)
 	case "isis-nbr":
-		container = new(inbrs)
+		container = new(Inbrs)
 	case "int-count":
-		container = new(icounts)
+		container = new(Icounts)
 	case "int-rate":
-		container = new(irates)
+		container = new(Irates)
 	default:
 		log.Fatalf("Type of info unknown: %s", *info)
 	}

@@ -9,7 +9,8 @@ import (
 	"github.com/pkg/errors"
 )
 
-type iints struct {
+// Iints contains a list of IS-IS interfaces
+type Iints struct {
 	list []*iint
 }
 
@@ -33,7 +34,7 @@ type prefix struct {
 	metric uint32
 }
 
-func (d *iints) Read(file *string) error {
+func (d *Iints) Read(file *string) error {
 	data := new(ISISInt)
 	err := decodeTelemetry(data, *file)
 	if err != nil {
@@ -73,7 +74,8 @@ func (d *iints) Read(file *string) error {
 	return nil
 }
 
-func (d *iints) DisplayTable() {
+// DisplayTable pretty prints the info populated.
+func (d *Iints) DisplayTable() {
 	var data [][]string
 	for _, s := range d.list {
 		for _, p := range s.prefixes {

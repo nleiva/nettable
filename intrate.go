@@ -8,7 +8,8 @@ import (
 	"github.com/pkg/errors"
 )
 
-type irates struct {
+// Irates contains a list of interface data rates
+type Irates struct {
 	list []*irate
 }
 
@@ -22,7 +23,7 @@ type irate struct {
 	outPktRate  uint64
 }
 
-func (d *irates) Read(file *string) error {
+func (d *Irates) Read(file *string) error {
 	data := new(IntRate)
 	err := decodeTelemetry(data, *file)
 	if err != nil {
@@ -46,7 +47,8 @@ func (d *irates) Read(file *string) error {
 	return nil
 }
 
-func (d *irates) DisplayTable() {
+// DisplayTable pretty prints the info populated.
+func (d *Irates) DisplayTable() {
 	var data [][]string
 	for _, s := range d.list {
 		data = append(data, []string{s.hostname, s.name, fmt.Sprint(s.inDataRate),

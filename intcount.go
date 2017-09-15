@@ -8,7 +8,8 @@ import (
 	"github.com/pkg/errors"
 )
 
-type icounts struct {
+// Icounts contains a list of interface counters
+type Icounts struct {
 	list []*icount
 }
 
@@ -31,7 +32,7 @@ type icount struct {
 	carrTrans  uint32
 }
 
-func (d *icounts) Read(file *string) error {
+func (d *Icounts) Read(file *string) error {
 	data := new(IntCount)
 	err := decodeTelemetry(data, *file)
 	if err != nil {
@@ -59,7 +60,8 @@ func (d *icounts) Read(file *string) error {
 	return nil
 }
 
-func (d *icounts) DisplayTable() {
+// DisplayTable pretty prints the info populated.
+func (d *Icounts) DisplayTable() {
 	var data [][]string
 	for _, s := range d.list {
 		data = append(data, []string{s.hostname, s.name, fmt.Sprint(s.pktsRecv),

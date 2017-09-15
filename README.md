@@ -1,5 +1,9 @@
 # Parsing Telemetry data from IOS XR YANG models
 
+[![GoDoc](https://godoc.org/github.com/nleiva/nettable?status.svg)](https://godoc.org/github.com/nleiva/nettable) 
+[![Build Status](https://travis-ci.org/nleiva/nettable.svg?branch=master)](https://travis-ci.org/nleiva/nettable) 
+[![codecov](https://codecov.io/gh/nleiva/nettable/branch/master/graph/badge.svg)](https://codecov.io/gh/nleiva/nettable) 
+[![Go Report Card](https://goreportcard.com/badge/github.com/nleiva/nettable)](https://goreportcard.com/report/github.com/nleiva/nettable)
 [![Apache 2.0 License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 
 `nettable` reads an IOS XR Telemetry file and parses relevant info in order to produce a summary table. This exercise is inspired on what was done for [tlvdecode](https://github.com/nleiva/tlvdecode). The goal is to illustrate how to organize telemetry data to facilitate connecting the dots between different data sets. 

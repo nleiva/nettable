@@ -8,7 +8,8 @@ import (
 	"github.com/pkg/errors"
 )
 
-type inbrs struct {
+// Inbrs contains a list of IS-IS neighbors
+type Inbrs struct {
 	list []*inbr
 }
 
@@ -24,7 +25,7 @@ type local struct {
 	area     string
 }
 
-func (d *inbrs) Read(file *string) error {
+func (d *Inbrs) Read(file *string) error {
 	data := new(ISISNbr)
 	err := decodeTelemetry(data, *file)
 	if err != nil {
@@ -50,7 +51,8 @@ func (d *inbrs) Read(file *string) error {
 	return nil
 }
 
-func (d *inbrs) DisplayTable() {
+// DisplayTable pretty prints the info populated.
+func (d *Inbrs) DisplayTable() {
 	var data [][]string
 	for _, s := range d.list {
 		data = append(data, []string{s.hostname, s.intName, s.area,

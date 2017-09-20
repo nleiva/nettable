@@ -1,7 +1,10 @@
-package main
+package nettable_test
 
 import (
+	"os"
 	"testing"
+
+	nt "github.com/nleiva/nettable"
 )
 
 func TestMain(t *testing.T) {
@@ -15,21 +18,25 @@ func TestMain(t *testing.T) {
 		{name: "int-count", file: "input/int-count.json"},
 		{name: "int-rate", file: "input/int-rate.json"},
 	}
-	var container Parser
+	var container nt.Parser
 
 	for _, tc := range tt {
 		switch tc.name {
 		case "isis-int":
-			container = new(Iints)
+			container = new(nt.Iints)
 		case "isis-nbr":
-			container = new(Inbrs)
+			container = new(nt.Inbrs)
 		case "int-count":
-			container = new(Icounts)
+			container = new(nt.Icounts)
 		case "int-rate":
-			container = new(Irates)
+			container = new(nt.Irates)
 		default:
 		}
-		err := parseTelemetry(container, &tc.file)
+		file, err := os.Open(tc.file)
+		if err != nil {
+			t.Fatalf("could not open the file: %s; %v", tc.file, err)
+		}
+		err = nt.ParseTelemetry(container, file, os.Stdout)
 		if err != nil {
 			t.Fatalf("could not parse: %s, file: %s", tc.name, tc.file)
 		}

@@ -1,4 +1,4 @@
-package main
+package nettable
 
 import "net"
 

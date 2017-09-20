@@ -1,9 +1,9 @@
-package main
+package nettable
 
 import (
 	"fmt"
+	"io"
 	"net"
-	"os"
 
 	"github.com/olekukonko/tablewriter"
 	"github.com/pkg/errors"
@@ -34,9 +34,9 @@ type prefix struct {
 	metric uint32
 }
 
-func (d *Iints) Read(file *string) error {
+func (d *Iints) Read(r io.Reader) error {
 	data := new(ISISInt)
-	err := decodeTelemetry(data, *file)
+	err := decodeTelemetry(data, r)
 	if err != nil {
 		return errors.Wrap(err, "error decoding JSON file")
 	}
@@ -75,7 +75,7 @@ func (d *Iints) Read(file *string) error {
 }
 
 // DisplayTable pretty prints the info populated.
-func (d *Iints) DisplayTable() {
+func (d *Iints) DisplayTable(w io.Writer) {
 	var data [][]string
 	for _, s := range d.list {
 		for _, p := range s.prefixes {
@@ -84,7 +84,7 @@ func (d *Iints) DisplayTable() {
 				s.status, s.fwAddress.String(), pf})
 		}
 	}
-	table := tablewriter.NewWriter(os.Stdout)
+	table := tablewriter.NewWriter(w)
 	table.SetHeader([]string{"hostname", "interface", "config", "status", "FW address", "Prefix"})
 	for _, v := range data {
 		table.Append(v)

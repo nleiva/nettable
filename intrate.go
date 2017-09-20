@@ -1,8 +1,8 @@
-package main
+package nettable
 
 import (
 	"fmt"
-	"os"
+	"io"
 
 	"github.com/olekukonko/tablewriter"
 	"github.com/pkg/errors"
@@ -23,9 +23,9 @@ type irate struct {
 	outPktRate  uint64
 }
 
-func (d *Irates) Read(file *string) error {
+func (d *Irates) Read(r io.Reader) error {
 	data := new(IntRate)
-	err := decodeTelemetry(data, *file)
+	err := decodeTelemetry(data, r)
 	if err != nil {
 		return errors.Wrap(err, "error decoding JSON file")
 	}
@@ -48,15 +48,15 @@ func (d *Irates) Read(file *string) error {
 }
 
 // DisplayTable pretty prints the info populated.
-func (d *Irates) DisplayTable() {
+func (d *Irates) DisplayTable(w io.Writer) {
 	var data [][]string
 	for _, s := range d.list {
 		data = append(data, []string{s.hostname, s.name, fmt.Sprint(s.inDataRate),
 			fmt.Sprint(s.outDataRate), fmt.Sprint(s.bw)})
 	}
-	table := tablewriter.NewWriter(os.Stdout)
-	table.SetHeader([]string{"hostname", "interface", "in data rate",
-		"out data rate", "bw"})
+	table := tablewriter.NewWriter(w)
+	table.SetHeader([]string{"hostname", "interface", "in kbps",
+		"out kbps", "bw"})
 	for _, v := range data {
 		table.Append(v)
 	}

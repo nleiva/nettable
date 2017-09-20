@@ -28,7 +28,7 @@ While the examples presented here were created in an IPv6-only enviroment, addin
 ### IS-IS Interfaces
 
 ```console
-$ ./nettable -f input/isis-int.json -i isis-int
+example/showtable$ ./showtable -f ../../input/isis-int.json -i isis-int
 +------------------------+--------------------+---------------+-----------+--------------------------+--------------------+
 |        HOSTNAME        |     INTERFACE      |    CONFIG     |  STATUS   |        FW ADDRESS        |       PREFIX       |
 +------------------------+--------------------+---------------+-----------+--------------------------+--------------------+
@@ -43,7 +43,7 @@ $ ./nettable -f input/isis-int.json -i isis-int
 ### IS-IS Neigbors
 
 ```console
-$ ./nettable -f input/isis-nbr.json -i isis-nbr
+example/showtable$ ./showtable -f ../../input/isis-nbr.json -i isis-nbr
 +------------------------+--------------------+--------------+----------------+--------------------------+
 |        HOSTNAME        |     INTERFACE      |     AREA     |   REMOTE ID    |        FW ADDRESS        |
 +------------------------+--------------------+--------------+----------------+--------------------------+
@@ -55,46 +55,45 @@ $ ./nettable -f input/isis-nbr.json -i isis-nbr
 ### Interface Counters
 
 ```console
-$ ./nettable -f input/int-count.json -i int-count
-+------------------------+---------------------+-----------+-----------+-------------+---------+----------+
-|        HOSTNAME        |      INTERFACE      | PKTS SENT | PKTS RECV | TRANSITIONS | IN ERRS | OUT ERRS |
-+------------------------+---------------------+-----------+-----------+-------------+---------+----------+
-| mrstn-5502-1.cisco.com | Null0               |         0 |         0 |           0 |       0 |        0 |
-| mrstn-5502-1.cisco.com | Bundle-Ether20      |    769131 |    768015 |           0 |       0 |        0 |
-| mrstn-5502-1.cisco.com | HundredGigE0/0/0/0  |     43764 |     43753 |           5 |       0 |        0 |
-| mrstn-5502-1.cisco.com | HundredGigE0/0/0/47 |         0 |         0 |           0 |       0 |        0 |
-| mrstn-5502-1.cisco.com | HundredGigE0/0/0/46 |         0 |         0 |           0 |       0 |        0 |
-| mrstn-5502-1.cisco.com | HundredGigE0/0/0/1  |   1846705 |   1740573 |          19 |       0 |        0 |
+example/showtable$ /showtable -f ../../input/int-count.json -i int-count
++------------------------+---------------------+-----------+-----------+-------+---------+----------+
+|        HOSTNAME        |      INTERFACE      | PKTS SENT | PKTS RECV | TRANS | IN ERRS | OUT ERRS |
++------------------------+---------------------+-----------+-----------+-------+---------+----------+
+| mrstn-5502-1.cisco.com | Null0               |         0 |         0 |     0 |       0 |        0 |
+| mrstn-5502-1.cisco.com | Bundle-Ether20      |    769131 |    768015 |     0 |       0 |        0 |
+| mrstn-5502-1.cisco.com | HundredGigE0/0/0/0  |     43764 |     43753 |     5 |       0 |        0 |
+| mrstn-5502-1.cisco.com | HundredGigE0/0/0/47 |         0 |         0 |     0 |       0 |        0 |
+| mrstn-5502-1.cisco.com | HundredGigE0/0/0/46 |         0 |         0 |     0 |       0 |        0 |
+| mrstn-5502-1.cisco.com | HundredGigE0/0/0/1  |   1846705 |   1740573 |    19 |       0 |        0 |
 ...
-| mrstn-5502-1.cisco.com | HundredGigE0/0/0/21 |    461053 |    461742 |           4 |       0 |        0 |
-| mrstn-5502-1.cisco.com | HundredGigE0/0/0/22 |    308078 |    306273 |           4 |       0 |        0 |
+| mrstn-5502-1.cisco.com | HundredGigE0/0/0/21 |    461053 |    461742 |     4 |       0 |        0 |
+| mrstn-5502-1.cisco.com | HundredGigE0/0/0/22 |    308078 |    306273 |     4 |       0 |        0 |
 ...
-| mrstn-5502-1.cisco.com | FortyGigE0/0/0/34   |         0 |         0 |           0 |       0 |        0 |
-| mrstn-5502-1.cisco.com | FortyGigE0/0/0/38   |         0 |         0 |           0 |       0 |        0 |
-+------------------------+---------------------+-----------+-----------+-------------+---------+----------+
+| mrstn-5502-1.cisco.com | FortyGigE0/0/0/34   |         0 |         0 |     0 |       0 |        0 |
+| mrstn-5502-1.cisco.com | FortyGigE0/0/0/38   |         0 |         0 |     0 |       0 |        0 |
++------------------------+---------------------+-----------+-----------+-------+---------+----------+
 ```
 
 ### Interface Data Rates
 
 ```console
-$ ./nettable -f input/int-rate.json -i int-rate
-+------------------------+---------------------+--------------+---------------+-----------+
-|        HOSTNAME        |      INTERFACE      | IN DATA RATE | OUT DATA RATE |    BW     |
-+------------------------+---------------------+--------------+---------------+-----------+
-| mrstn-5502-1.cisco.com | Null0               |            0 |             0 |         0 |
-| mrstn-5502-1.cisco.com | Bundle-Ether20      |            0 |             0 |         0 |
-| mrstn-5502-1.cisco.com | HundredGigE0/0/0/0  |          293 |           293 | 100000000 |
-| mrstn-5502-1.cisco.com | HundredGigE0/0/0/47 |            0 |             0 | 100000000 |
-| mrstn-5502-1.cisco.com | HundredGigE0/0/0/46 |            0 |             0 | 100000000 |
-| mrstn-5502-1.cisco.com | HundredGigE0/0/0/1  |            7 |            10 | 100000000 |
+example/showtable$ ./showtable -f ../../input/int-rate.json -i int-rate
++------------------------+---------------------+---------+----------+-----------+
+|        HOSTNAME        |      INTERFACE      | IN KBPS | OUT KBPS |    BW     |
++------------------------+---------------------+---------+----------+-----------+
+| mrstn-5502-1.cisco.com | Null0               |       0 |        0 |         0 |
+| mrstn-5502-1.cisco.com | Bundle-Ether20      |       0 |        0 |         0 |
+| mrstn-5502-1.cisco.com | HundredGigE0/0/0/0  |     293 |      293 | 100000000 |
+| mrstn-5502-1.cisco.com | HundredGigE0/0/0/47 |       0 |        0 | 100000000 |
+| mrstn-5502-1.cisco.com | HundredGigE0/0/0/46 |       0 |        0 | 100000000 |
+| mrstn-5502-1.cisco.com | HundredGigE0/0/0/1  |       7 |       10 | 100000000 |
 ...
-| mrstn-5502-1.cisco.com | HundredGigE0/0/0/20 |            0 |             0 | 100000000 |
-| mrstn-5502-1.cisco.com | HundredGigE0/0/0/21 |            0 |             0 | 100000000 |
-| mrstn-5502-1.cisco.com | HundredGigE0/0/0/22 |            0 |             0 | 100000000 |
+| mrstn-5502-1.cisco.com | HundredGigE0/0/0/21 |       0 |        0 | 100000000 |
+| mrstn-5502-1.cisco.com | HundredGigE0/0/0/22 |       0 |        0 | 100000000 |
 ...
-| mrstn-5502-1.cisco.com | FortyGigE0/0/0/34   |            0 |             0 |  40000000 |
-| mrstn-5502-1.cisco.com | FortyGigE0/0/0/38   |            0 |             0 |  40000000 |
-+------------------------+---------------------+--------------+---------------+-----------+
+| mrstn-5502-1.cisco.com | FortyGigE0/0/0/34   |       0 |        0 |  40000000 |
+| mrstn-5502-1.cisco.com | FortyGigE0/0/0/38   |       0 |        0 |  40000000 |
++------------------------+---------------------+---------+----------+-----------+
 ```
 
 ## Links

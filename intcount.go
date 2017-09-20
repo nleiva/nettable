@@ -1,8 +1,8 @@
-package main
+package nettable
 
 import (
 	"fmt"
-	"os"
+	"io"
 
 	"github.com/olekukonko/tablewriter"
 	"github.com/pkg/errors"
@@ -32,9 +32,9 @@ type icount struct {
 	carrTrans  uint32
 }
 
-func (d *Icounts) Read(file *string) error {
+func (d *Icounts) Read(r io.Reader) error {
 	data := new(IntCount)
-	err := decodeTelemetry(data, *file)
+	err := decodeTelemetry(data, r)
 	if err != nil {
 		return errors.Wrap(err, "error decoding JSON file")
 	}
@@ -61,15 +61,15 @@ func (d *Icounts) Read(file *string) error {
 }
 
 // DisplayTable pretty prints the info populated.
-func (d *Icounts) DisplayTable() {
+func (d *Icounts) DisplayTable(w io.Writer) {
 	var data [][]string
 	for _, s := range d.list {
 		data = append(data, []string{s.hostname, s.name, fmt.Sprint(s.pktsRecv),
 			fmt.Sprint(s.pktsSent), fmt.Sprint(s.carrTrans), fmt.Sprint(s.inErrs), fmt.Sprint(s.outErrs)})
 	}
-	table := tablewriter.NewWriter(os.Stdout)
+	table := tablewriter.NewWriter(w)
 	table.SetHeader([]string{"hostname", "interface", "pkts sent",
-		"pkts recv", "transitions", "in errs", "out errs"})
+		"pkts recv", "trans", "in errs", "out errs"})
 	for _, v := range data {
 		table.Append(v)
 	}

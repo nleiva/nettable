@@ -1,8 +1,8 @@
-package main
+package nettable
 
 import (
+	"io"
 	"net"
-	"os"
 
 	"github.com/olekukonko/tablewriter"
 	"github.com/pkg/errors"
@@ -25,9 +25,9 @@ type local struct {
 	area     string
 }
 
-func (d *Inbrs) Read(file *string) error {
+func (d *Inbrs) Read(r io.Reader) error {
 	data := new(ISISNbr)
-	err := decodeTelemetry(data, *file)
+	err := decodeTelemetry(data, r)
 	if err != nil {
 		return errors.Wrap(err, "error decoding JSON file")
 	}
@@ -52,13 +52,13 @@ func (d *Inbrs) Read(file *string) error {
 }
 
 // DisplayTable pretty prints the info populated.
-func (d *Inbrs) DisplayTable() {
+func (d *Inbrs) DisplayTable(w io.Writer) {
 	var data [][]string
 	for _, s := range d.list {
 		data = append(data, []string{s.hostname, s.intName, s.area,
 			s.remoteID, s.fwAddress.String()})
 	}
-	table := tablewriter.NewWriter(os.Stdout)
+	table := tablewriter.NewWriter(w)
 	table.SetHeader([]string{"hostname", "interface", "area", "remote id", "FW address"})
 	for _, v := range data {
 		table.Append(v)

@@ -26,7 +26,7 @@ type ISISLSP struct {
 		} `json:"Content,omitempty"`
 		Keys struct {
 			InstanceName string `json:"instance_name,omitempty"`
-			Level        uint8  `json:"level,string,omitempty"`
+			Level        string `json:"level,omitempty"`
 			LspID        string `json:"lsp_id,omitempty"`
 		} `json:"Keys,omitempty"`
 		Timestamp uint64 `json:"Timestamp,omitempty"`

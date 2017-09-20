@@ -1,0 +1,986 @@
+{
+    "Source": "[2001:420:2cff:1204::5502:2]:61544",
+    "Telemetry": {
+        "node_id_str": "mrstn-5502-2.cisco.com",
+        "subscription_id_str": "IS-IS",
+        "encoding_path": "Cisco-IOS-XR-clns-isis-oper:isis/instances/instance/interfaces/interface",
+        "collection_id": 37,
+        "collection_start_time": 1505923365302,
+        "msg_timestamp": 1505923365302,
+        "collection_end_time": 1505923365310
+    },
+    "Rows": [
+        {
+            "Timestamp": 1505923365306,
+            "Keys": {
+                "instance_name": "BB2",
+                "interface_name": "Loopback60"
+            },
+            "Content": {
+                "configured_circuit_type": "isis-levels-12",
+                "configured_status": {
+                    "adjacency_form_status": false,
+                    "adv_prefix_status": true
+                },
+                "mesh_group": 0,
+                "is_type": "isis-levels-2",
+                "interface_status_and_data": {
+                    "status": "isis-enabled",
+                    "enabled": {
+                        "adjacency_form_status": {
+                            "status": "isis-disabled",
+                            "disabled": {
+                                "reason_code": "isis-intf-adj-form-disabled-cfg-passive"
+                            }
+                        },
+                        "adv_prefix_status": {
+                            "status": "isis-enabled"
+                        },
+                        "interface_media_type": "isis-media-class-loopback",
+                        "enabled_circuit_type": "isis-levels-2",
+                        "local_circuit_number": 0,
+                        "bfd_data": {
+                            "enabled": false,
+                            "ipv6_enabled": false,
+                            "interval": 150,
+                            "multiplier": 3
+                        },
+                        "rsi_srlg_registered": false,
+                        "per_topology_data": [
+                            {
+                                "topology_id": {
+                                    "af_name": "ipv6",
+                                    "saf_name": "unicast",
+                                    "vrf_name": "",
+                                    "topology_name": ""
+                                },
+                                "status": {
+                                    "status": "isis-enabled",
+                                    "enabled": {
+                                        "adjacency_form_status": {
+                                            "status": "isis-disabled",
+                                            "disabled": {
+                                                "reason_code": "isis-intf-topo-adj-form-disabled-intf-passive"
+                                            }
+                                        },
+                                        "adv_prefix_status": {
+                                            "status": "isis-enabled"
+                                        },
+                                        "level1_metric": 1,
+                                        "level2_metric": 1,
+                                        "level1_weight": 0,
+                                        "level2_weight": 0,
+                                        "max_label_supported": 2,
+                                        "max_bkp_label_supported": 2,
+                                        "max_srte_label_supported": 10,
+                                        "level1_ldp_sync_enabled": false,
+                                        "level2_ldp_sync_enabled": false,
+                                        "ldp_sync_status": false,
+                                        "ld_pv6_sync_status": false,
+                                        "level1_offset_metric": 0,
+                                        "level2_offset_metric": 0,
+                                        "level1_lkgp_configured": false,
+                                        "level2_lkgp_configured": false,
+                                        "level1_pp_metric": 0,
+                                        "level2_pp_metric": 0,
+                                        "level1_pp_configured": false,
+                                        "level2_pp_configured": false
+                                    }
+                                }
+                            }
+                        ],
+                        "per_address_family_data": [
+                            {
+                                "af_name": "ipv6",
+                                "af_status": {
+                                    "status": "isis-enabled",
+                                    "af_data": {
+                                        "protocol_status": {
+                                            "status": "isis-up"
+                                        },
+                                        "forwarding_address_status": {
+                                            "status": "isis-unknown",
+                                            "unknown": {
+                                                "reason_code": "isis-intf-af-fwd-addr-unknown-cfg-passive"
+                                            }
+                                        },
+                                        "prefix_status": {
+                                            "status": "isis-known",
+                                            "prefix_data": {
+                                                "prefix": [
+                                                    {
+                                                        "af_name": "ipv6",
+                                                        "ipv6": {
+                                                            "prefix": "2001:558:2::2",
+                                                            "prefix_length": 128
+                                                        }
+                                                    }
+                                                ],
+                                                "is_unnumbered": false
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                },
+                "nsr_intf": false
+            }
+        },
+        {
+            "Timestamp": 1505923365306,
+            "Keys": {
+                "instance_name": "BB2",
+                "interface_name": "Bundle-Ether20"
+            },
+            "Content": {
+                "configured_circuit_type": "isis-levels-12",
+                "configured_status": {
+                    "adjacency_form_status": true,
+                    "adv_prefix_status": true
+                },
+                "mesh_group": 0,
+                "is_type": "isis-levels-2",
+                "interface_status_and_data": {
+                    "status": "isis-enabled",
+                    "enabled": {
+                        "adjacency_form_status": {
+                            "status": "isis-disabled",
+                            "disabled": {
+                                "reason_code": "isis-intf-adj-form-disabled-clns-io"
+                            }
+                        },
+                        "adv_prefix_status": {
+                            "status": "isis-disabled",
+                            "disabled": {
+                                "reason_code": "isis-intf-adv-prefix-disabled-no-topo-participate"
+                            }
+                        },
+                        "interface_media_type": "isis-media-class-p2p",
+                        "enabled_circuit_type": "isis-levels-2",
+                        "local_circuit_number": 0,
+                        "bfd_data": {
+                            "enabled": false,
+                            "ipv6_enabled": false,
+                            "interval": 150,
+                            "multiplier": 3
+                        },
+                        "rsi_srlg_registered": false,
+                        "clns_data": {
+                            "clns_status": {
+                                "status": "isis-down",
+                                "clns_down_info": {
+                                    "reason_code": "isis-intf-clns-proto-down-clns-not-up"
+                                }
+                            },
+                            "mtu_info": {
+                                "status": "isis-valid",
+                                "mtu": 9175
+                            },
+                            "snpa_state": {
+                                "status": "isis-known",
+                                "known": {
+                                    "snpa": "008a.9646.34db"
+                                }
+                            },
+                            "media_specific_state": {
+                                "clns_media_type": "isis-media-class-p2p",
+                                "clns_p2_p_data": {
+                                    "p2_p_over_lan_data": {
+                                        "multicast_status": {
+                                            "status": "isis-valid"
+                                        }
+                                    }
+                                }
+                            },
+                            "time_until_next_lsp": 0,
+                            "lsp_transmit_requested_flag": false,
+                            "lsp_transmitted_flag": false,
+                            "lsp_txmitd_b2_b_limit": 0,
+                            "lsp_txmt_b2_b_msecs": 0,
+                            "last_lsp_level_transmitted": "isis-level0",
+                            "last_lsp_id_transmitted": "0000.0000.0000.00-00"
+                        },
+                        "per_topology_data": [
+                            {
+                                "topology_id": {
+                                    "af_name": "ipv6",
+                                    "saf_name": "unicast",
+                                    "vrf_name": "",
+                                    "topology_name": ""
+                                },
+                                "status": {
+                                    "status": "isis-enabled",
+                                    "enabled": {
+                                        "adjacency_form_status": {
+                                            "status": "isis-disabled",
+                                            "disabled": {
+                                                "reason_code": "isis-intf-topo-adj-form-disabled-af-not-up"
+                                            }
+                                        },
+                                        "adv_prefix_status": {
+                                            "status": "isis-disabled",
+                                            "disabled": {
+                                                "reason_code": "isis-intf-topo-adv-prefix-disabled-af-not-up"
+                                            }
+                                        },
+                                        "level1_metric": 10,
+                                        "level2_metric": 10,
+                                        "level1_weight": 0,
+                                        "level2_weight": 0,
+                                        "max_label_supported": 2,
+                                        "max_bkp_label_supported": 2,
+                                        "max_srte_label_supported": 10,
+                                        "level1_ldp_sync_enabled": false,
+                                        "level2_ldp_sync_enabled": false,
+                                        "ldp_sync_status": false,
+                                        "ld_pv6_sync_status": false,
+                                        "level1_offset_metric": 0,
+                                        "level2_offset_metric": 0,
+                                        "level1_lkgp_configured": false,
+                                        "level2_lkgp_configured": false,
+                                        "level1_pp_metric": 0,
+                                        "level2_pp_metric": 0,
+                                        "level1_pp_configured": false,
+                                        "level2_pp_configured": false
+                                    }
+                                }
+                            }
+                        ],
+                        "per_address_family_data": [
+                            {
+                                "af_name": "ipv6",
+                                "af_status": {
+                                    "status": "isis-enabled",
+                                    "af_data": {
+                                        "protocol_status": {
+                                            "status": "isis-down",
+                                            "disabled": {
+                                                "reason_code": "isis-intf-af-proto-down-af-not-up"
+                                            }
+                                        },
+                                        "forwarding_address_status": {
+                                            "status": "isis-known",
+                                            "forwarding_address_data": {
+                                                "forwarding_address": [
+                                                    {
+                                                        "af_name": "ipv6",
+                                                        "ipv4": "",
+                                                        "ipv6": {
+                                                            "value": "fe80::28a:96ff:fe46:34db"
+                                                        }
+                                                    }
+                                                ],
+                                                "unnumbered_interface_name": ""
+                                            }
+                                        },
+                                        "prefix_status": {
+                                            "status": "isis-known",
+                                            "prefix_data": {
+                                                "prefix": [
+                                                    {
+                                                        "af_name": "ipv6",
+                                                        "ipv6": {
+                                                            "prefix": "2001:f00:bc::",
+                                                            "prefix_length": 64
+                                                        }
+                                                    }
+                                                ],
+                                                "is_unnumbered": false
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                },
+                "nsr_intf": false
+            }
+        },
+        {
+            "Timestamp": 1505923365306,
+            "Keys": {
+                "instance_name": "BB2",
+                "interface_name": "Bundle-Ether30"
+            },
+            "Content": {
+                "configured_circuit_type": "isis-levels-12",
+                "configured_status": {
+                    "adjacency_form_status": true,
+                    "adv_prefix_status": true
+                },
+                "mesh_group": 0,
+                "is_type": "isis-levels-2",
+                "interface_status_and_data": {
+                    "status": "isis-enabled",
+                    "enabled": {
+                        "adjacency_form_status": {
+                            "status": "isis-disabled",
+                            "disabled": {
+                                "reason_code": "isis-intf-adj-form-disabled-clns-io"
+                            }
+                        },
+                        "adv_prefix_status": {
+                            "status": "isis-disabled",
+                            "disabled": {
+                                "reason_code": "isis-intf-adv-prefix-disabled-no-topo-participate"
+                            }
+                        },
+                        "interface_media_type": "isis-media-class-p2p",
+                        "enabled_circuit_type": "isis-levels-2",
+                        "local_circuit_number": 0,
+                        "bfd_data": {
+                            "enabled": false,
+                            "ipv6_enabled": false,
+                            "interval": 150,
+                            "multiplier": 3
+                        },
+                        "rsi_srlg_registered": false,
+                        "clns_data": {
+                            "clns_status": {
+                                "status": "isis-down",
+                                "clns_down_info": {
+                                    "reason_code": "isis-intf-clns-proto-down-clns-not-up"
+                                }
+                            },
+                            "mtu_info": {
+                                "status": "isis-valid",
+                                "mtu": 9175
+                            },
+                            "snpa_state": {
+                                "status": "isis-known",
+                                "known": {
+                                    "snpa": "008a.9646.34da"
+                                }
+                            },
+                            "media_specific_state": {
+                                "clns_media_type": "isis-media-class-p2p",
+                                "clns_p2_p_data": {
+                                    "p2_p_over_lan_data": {
+                                        "multicast_status": {
+                                            "status": "isis-valid"
+                                        }
+                                    }
+                                }
+                            },
+                            "time_until_next_lsp": 0,
+                            "lsp_transmit_requested_flag": false,
+                            "lsp_transmitted_flag": false,
+                            "lsp_txmitd_b2_b_limit": 0,
+                            "lsp_txmt_b2_b_msecs": 0,
+                            "last_lsp_level_transmitted": "isis-level0",
+                            "last_lsp_id_transmitted": "0000.0000.0000.00-00"
+                        },
+                        "per_topology_data": [
+                            {
+                                "topology_id": {
+                                    "af_name": "ipv6",
+                                    "saf_name": "unicast",
+                                    "vrf_name": "",
+                                    "topology_name": ""
+                                },
+                                "status": {
+                                    "status": "isis-enabled",
+                                    "enabled": {
+                                        "adjacency_form_status": {
+                                            "status": "isis-disabled",
+                                            "disabled": {
+                                                "reason_code": "isis-intf-topo-adj-form-disabled-af-not-up"
+                                            }
+                                        },
+                                        "adv_prefix_status": {
+                                            "status": "isis-disabled",
+                                            "disabled": {
+                                                "reason_code": "isis-intf-topo-adv-prefix-disabled-af-not-up"
+                                            }
+                                        },
+                                        "level1_metric": 65000,
+                                        "level2_metric": 65000,
+                                        "level1_weight": 0,
+                                        "level2_weight": 0,
+                                        "max_label_supported": 2,
+                                        "max_bkp_label_supported": 2,
+                                        "max_srte_label_supported": 10,
+                                        "level1_ldp_sync_enabled": false,
+                                        "level2_ldp_sync_enabled": false,
+                                        "ldp_sync_status": false,
+                                        "ld_pv6_sync_status": false,
+                                        "level1_offset_metric": 0,
+                                        "level2_offset_metric": 0,
+                                        "level1_lkgp_configured": false,
+                                        "level2_lkgp_configured": false,
+                                        "level1_pp_metric": 0,
+                                        "level2_pp_metric": 0,
+                                        "level1_pp_configured": false,
+                                        "level2_pp_configured": false
+                                    }
+                                }
+                            }
+                        ],
+                        "per_address_family_data": [
+                            {
+                                "af_name": "ipv6",
+                                "af_status": {
+                                    "status": "isis-enabled",
+                                    "af_data": {
+                                        "protocol_status": {
+                                            "status": "isis-down",
+                                            "disabled": {
+                                                "reason_code": "isis-intf-af-proto-down-af-not-up"
+                                            }
+                                        },
+                                        "forwarding_address_status": {
+                                            "status": "isis-known",
+                                            "forwarding_address_data": {
+                                                "forwarding_address": [
+                                                    {
+                                                        "af_name": "ipv6",
+                                                        "ipv4": "",
+                                                        "ipv6": {
+                                                            "value": "fe80::28a:96ff:fe46:34da"
+                                                        }
+                                                    }
+                                                ],
+                                                "unnumbered_interface_name": ""
+                                            }
+                                        },
+                                        "prefix_status": {
+                                            "status": "isis-known",
+                                            "prefix_data": {
+                                                "prefix": [
+                                                    {
+                                                        "af_name": "ipv6",
+                                                        "ipv6": {
+                                                            "prefix": "2001:f00:bd::",
+                                                            "prefix_length": 64
+                                                        }
+                                                    }
+                                                ],
+                                                "is_unnumbered": false
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                },
+                "nsr_intf": false
+            }
+        },
+        {
+            "Timestamp": 1505923365306,
+            "Keys": {
+                "instance_name": "BB2",
+                "interface_name": "Bundle-Ether40"
+            },
+            "Content": {
+                "configured_circuit_type": "isis-levels-12",
+                "configured_status": {
+                    "adjacency_form_status": true,
+                    "adv_prefix_status": true
+                },
+                "mesh_group": 0,
+                "is_type": "isis-levels-2",
+                "interface_status_and_data": {
+                    "status": "isis-enabled",
+                    "enabled": {
+                        "adjacency_form_status": {
+                            "status": "isis-disabled",
+                            "disabled": {
+                                "reason_code": "isis-intf-adj-form-disabled-clns-io"
+                            }
+                        },
+                        "adv_prefix_status": {
+                            "status": "isis-disabled",
+                            "disabled": {
+                                "reason_code": "isis-intf-adv-prefix-disabled-no-topo-participate"
+                            }
+                        },
+                        "interface_media_type": "isis-media-class-p2p",
+                        "enabled_circuit_type": "isis-levels-2",
+                        "local_circuit_number": 0,
+                        "bfd_data": {
+                            "enabled": false,
+                            "ipv6_enabled": false,
+                            "interval": 150,
+                            "multiplier": 3
+                        },
+                        "rsi_srlg_registered": false,
+                        "clns_data": {
+                            "clns_status": {
+                                "status": "isis-down",
+                                "clns_down_info": {
+                                    "reason_code": "isis-intf-clns-proto-down-clns-not-up"
+                                }
+                            },
+                            "mtu_info": {
+                                "status": "isis-valid",
+                                "mtu": 9175
+                            },
+                            "snpa_state": {
+                                "status": "isis-known",
+                                "known": {
+                                    "snpa": "008a.9646.34d9"
+                                }
+                            },
+                            "media_specific_state": {
+                                "clns_media_type": "isis-media-class-p2p",
+                                "clns_p2_p_data": {
+                                    "p2_p_over_lan_data": {
+                                        "multicast_status": {
+                                            "status": "isis-valid"
+                                        }
+                                    }
+                                }
+                            },
+                            "time_until_next_lsp": 0,
+                            "lsp_transmit_requested_flag": false,
+                            "lsp_transmitted_flag": false,
+                            "lsp_txmitd_b2_b_limit": 0,
+                            "lsp_txmt_b2_b_msecs": 0,
+                            "last_lsp_level_transmitted": "isis-level0",
+                            "last_lsp_id_transmitted": "0000.0000.0000.00-00"
+                        },
+                        "per_topology_data": [
+                            {
+                                "topology_id": {
+                                    "af_name": "ipv6",
+                                    "saf_name": "unicast",
+                                    "vrf_name": "",
+                                    "topology_name": ""
+                                },
+                                "status": {
+                                    "status": "isis-enabled",
+                                    "enabled": {
+                                        "adjacency_form_status": {
+                                            "status": "isis-disabled",
+                                            "disabled": {
+                                                "reason_code": "isis-intf-topo-adj-form-disabled-af-not-up"
+                                            }
+                                        },
+                                        "adv_prefix_status": {
+                                            "status": "isis-disabled",
+                                            "disabled": {
+                                                "reason_code": "isis-intf-topo-adv-prefix-disabled-af-not-up"
+                                            }
+                                        },
+                                        "level1_metric": 65000,
+                                        "level2_metric": 65000,
+                                        "level1_weight": 0,
+                                        "level2_weight": 0,
+                                        "max_label_supported": 2,
+                                        "max_bkp_label_supported": 2,
+                                        "max_srte_label_supported": 10,
+                                        "level1_ldp_sync_enabled": false,
+                                        "level2_ldp_sync_enabled": false,
+                                        "ldp_sync_status": false,
+                                        "ld_pv6_sync_status": false,
+                                        "level1_offset_metric": 0,
+                                        "level2_offset_metric": 0,
+                                        "level1_lkgp_configured": false,
+                                        "level2_lkgp_configured": false,
+                                        "level1_pp_metric": 0,
+                                        "level2_pp_metric": 0,
+                                        "level1_pp_configured": false,
+                                        "level2_pp_configured": false
+                                    }
+                                }
+                            }
+                        ],
+                        "per_address_family_data": [
+                            {
+                                "af_name": "ipv6",
+                                "af_status": {
+                                    "status": "isis-enabled",
+                                    "af_data": {
+                                        "protocol_status": {
+                                            "status": "isis-down",
+                                            "disabled": {
+                                                "reason_code": "isis-intf-af-proto-down-af-not-up"
+                                            }
+                                        },
+                                        "forwarding_address_status": {
+                                            "status": "isis-known",
+                                            "forwarding_address_data": {
+                                                "forwarding_address": [
+                                                    {
+                                                        "af_name": "ipv6",
+                                                        "ipv4": "",
+                                                        "ipv6": {
+                                                            "value": "fe80::28a:96ff:fe46:34d9"
+                                                        }
+                                                    }
+                                                ],
+                                                "unnumbered_interface_name": ""
+                                            }
+                                        },
+                                        "prefix_status": {
+                                            "status": "isis-known",
+                                            "prefix_data": {
+                                                "prefix": [
+                                                    {
+                                                        "af_name": "ipv6",
+                                                        "ipv6": {
+                                                            "prefix": "2001:f00:be::",
+                                                            "prefix_length": 64
+                                                        }
+                                                    }
+                                                ],
+                                                "is_unnumbered": false
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                },
+                "nsr_intf": false
+            }
+        },
+        {
+            "Timestamp": 1505923365306,
+            "Keys": {
+                "instance_name": "BB2",
+                "interface_name": "HundredGigE0/0/0/0"
+            },
+            "Content": {
+                "configured_circuit_type": "isis-levels-12",
+                "configured_status": {
+                    "adjacency_form_status": true,
+                    "adv_prefix_status": true
+                },
+                "mesh_group": 0,
+                "is_type": "isis-levels-2",
+                "interface_status_and_data": {
+                    "status": "isis-enabled",
+                    "enabled": {
+                        "adjacency_form_status": {
+                            "status": "isis-enabled"
+                        },
+                        "adv_prefix_status": {
+                            "status": "isis-enabled"
+                        },
+                        "interface_media_type": "isis-media-class-p2p",
+                        "enabled_circuit_type": "isis-levels-2",
+                        "local_circuit_number": 0,
+                        "p2_p_data": {
+                            "time_until_next_iih": 4956,
+                            "retransmit_lsp_queue_size": 0,
+                            "retransmit_lsp_interval": 0,
+                            "extended_circuit_number": 57
+                        },
+                        "bfd_data": {
+                            "enabled": false,
+                            "ipv6_enabled": false,
+                            "interval": 150,
+                            "multiplier": 3
+                        },
+                        "rsi_srlg_registered": false,
+                        "clns_data": {
+                            "clns_status": {
+                                "status": "isis-up"
+                            },
+                            "mtu_info": {
+                                "status": "isis-valid",
+                                "mtu": 9175
+                            },
+                            "snpa_state": {
+                                "status": "isis-known",
+                                "known": {
+                                    "snpa": "008a.9646.3400"
+                                }
+                            },
+                            "media_specific_state": {
+                                "clns_media_type": "isis-media-class-p2p",
+                                "clns_p2_p_data": {
+                                    "p2_p_over_lan_data": {
+                                        "multicast_status": {
+                                            "status": "isis-valid"
+                                        }
+                                    }
+                                }
+                            },
+                            "time_until_next_lsp": 0,
+                            "lsp_transmit_requested_flag": false,
+                            "lsp_transmitted_flag": false,
+                            "lsp_txmitd_b2_b_limit": 9,
+                            "lsp_txmt_b2_b_msecs": 0,
+                            "last_lsp_level_transmitted": "isis-level0",
+                            "last_lsp_id_transmitted": "0000.0000.0000.00-00"
+                        },
+                        "per_area_data": [
+                            {
+                                "level": "isis-level2",
+                                "adjacency_count": 1,
+                                "lsp_pacing_interval": 33,
+                                "psnp_transmit_queue_size": 0
+                            }
+                        ],
+                        "per_topology_data": [
+                            {
+                                "topology_id": {
+                                    "af_name": "ipv6",
+                                    "saf_name": "unicast",
+                                    "vrf_name": "",
+                                    "topology_name": ""
+                                },
+                                "status": {
+                                    "status": "isis-enabled",
+                                    "enabled": {
+                                        "adjacency_form_status": {
+                                            "status": "isis-enabled"
+                                        },
+                                        "adv_prefix_status": {
+                                            "status": "isis-enabled"
+                                        },
+                                        "level1_metric": 10,
+                                        "level2_metric": 10,
+                                        "level1_weight": 0,
+                                        "level2_weight": 0,
+                                        "max_label_supported": 2,
+                                        "max_bkp_label_supported": 2,
+                                        "max_srte_label_supported": 10,
+                                        "level1_ldp_sync_enabled": false,
+                                        "level2_ldp_sync_enabled": false,
+                                        "ldp_sync_status": false,
+                                        "ld_pv6_sync_status": false,
+                                        "level1_offset_metric": 0,
+                                        "level2_offset_metric": 0,
+                                        "level1_lkgp_configured": false,
+                                        "level2_lkgp_configured": false,
+                                        "level1_pp_metric": 0,
+                                        "level2_pp_metric": 0,
+                                        "level1_pp_configured": false,
+                                        "level2_pp_configured": false
+                                    }
+                                }
+                            }
+                        ],
+                        "per_address_family_data": [
+                            {
+                                "af_name": "ipv6",
+                                "af_status": {
+                                    "status": "isis-enabled",
+                                    "af_data": {
+                                        "protocol_status": {
+                                            "status": "isis-up"
+                                        },
+                                        "forwarding_address_status": {
+                                            "status": "isis-known",
+                                            "forwarding_address_data": {
+                                                "forwarding_address": [
+                                                    {
+                                                        "af_name": "ipv6",
+                                                        "ipv4": "",
+                                                        "ipv6": {
+                                                            "value": "fe80::28a:96ff:fe46:3400"
+                                                        }
+                                                    }
+                                                ],
+                                                "unnumbered_interface_name": ""
+                                            }
+                                        },
+                                        "prefix_status": {
+                                            "status": "isis-known",
+                                            "prefix_data": {
+                                                "prefix": [
+                                                    {
+                                                        "af_name": "ipv6",
+                                                        "ipv6": {
+                                                            "prefix": "2001:f00:ba::",
+                                                            "prefix_length": 64
+                                                        }
+                                                    }
+                                                ],
+                                                "is_unnumbered": false
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                },
+                "nsr_intf": false
+            }
+        },
+        {
+            "Timestamp": 1505923365307,
+            "Keys": {
+                "instance_name": "BB2",
+                "interface_name": "HundredGigE0/0/0/1"
+            },
+            "Content": {
+                "configured_circuit_type": "isis-levels-12",
+                "configured_status": {
+                    "adjacency_form_status": true,
+                    "adv_prefix_status": true
+                },
+                "mesh_group": 0,
+                "is_type": "isis-levels-2",
+                "interface_status_and_data": {
+                    "status": "isis-enabled",
+                    "enabled": {
+                        "adjacency_form_status": {
+                            "status": "isis-enabled"
+                        },
+                        "adv_prefix_status": {
+                            "status": "isis-enabled"
+                        },
+                        "interface_media_type": "isis-media-class-p2p",
+                        "enabled_circuit_type": "isis-levels-2",
+                        "local_circuit_number": 0,
+                        "p2_p_data": {
+                            "time_until_next_iih": 7266,
+                            "retransmit_lsp_queue_size": 0,
+                            "retransmit_lsp_interval": 0,
+                            "extended_circuit_number": 102
+                        },
+                        "bfd_data": {
+                            "enabled": false,
+                            "ipv6_enabled": false,
+                            "interval": 150,
+                            "multiplier": 3
+                        },
+                        "rsi_srlg_registered": false,
+                        "clns_data": {
+                            "clns_status": {
+                                "status": "isis-up"
+                            },
+                            "mtu_info": {
+                                "status": "isis-valid",
+                                "mtu": 9175
+                            },
+                            "snpa_state": {
+                                "status": "isis-known",
+                                "known": {
+                                    "snpa": "008a.9646.3404"
+                                }
+                            },
+                            "media_specific_state": {
+                                "clns_media_type": "isis-media-class-p2p",
+                                "clns_p2_p_data": {
+                                    "p2_p_over_lan_data": {
+                                        "multicast_status": {
+                                            "status": "isis-valid"
+                                        }
+                                    }
+                                }
+                            },
+                            "time_until_next_lsp": 0,
+                            "lsp_transmit_requested_flag": false,
+                            "lsp_transmitted_flag": false,
+                            "lsp_txmitd_b2_b_limit": 9,
+                            "lsp_txmt_b2_b_msecs": 0,
+                            "last_lsp_level_transmitted": "isis-level0",
+                            "last_lsp_id_transmitted": "0000.0000.0000.00-00"
+                        },
+                        "per_area_data": [
+                            {
+                                "level": "isis-level2",
+                                "adjacency_count": 1,
+                                "lsp_pacing_interval": 33,
+                                "psnp_transmit_queue_size": 0
+                            }
+                        ],
+                        "per_topology_data": [
+                            {
+                                "topology_id": {
+                                    "af_name": "ipv6",
+                                    "saf_name": "unicast",
+                                    "vrf_name": "",
+                                    "topology_name": ""
+                                },
+                                "status": {
+                                    "status": "isis-enabled",
+                                    "enabled": {
+                                        "adjacency_form_status": {
+                                            "status": "isis-enabled"
+                                        },
+                                        "adv_prefix_status": {
+                                            "status": "isis-enabled"
+                                        },
+                                        "level1_metric": 10,
+                                        "level2_metric": 10,
+                                        "level1_weight": 0,
+                                        "level2_weight": 0,
+                                        "max_label_supported": 2,
+                                        "max_bkp_label_supported": 2,
+                                        "max_srte_label_supported": 10,
+                                        "level1_ldp_sync_enabled": false,
+                                        "level2_ldp_sync_enabled": false,
+                                        "ldp_sync_status": false,
+                                        "ld_pv6_sync_status": false,
+                                        "level1_offset_metric": 0,
+                                        "level2_offset_metric": 0,
+                                        "level1_lkgp_configured": false,
+                                        "level2_lkgp_configured": false,
+                                        "level1_pp_metric": 0,
+                                        "level2_pp_metric": 0,
+                                        "level1_pp_configured": false,
+                                        "level2_pp_configured": false
+                                    }
+                                }
+                            }
+                        ],
+                        "per_address_family_data": [
+                            {
+                                "af_name": "ipv6",
+                                "af_status": {
+                                    "status": "isis-enabled",
+                                    "af_data": {
+                                        "protocol_status": {
+                                            "status": "isis-up"
+                                        },
+                                        "forwarding_address_status": {
+                                            "status": "isis-known",
+                                            "forwarding_address_data": {
+                                                "forwarding_address": [
+                                                    {
+                                                        "af_name": "ipv6",
+                                                        "ipv4": "",
+                                                        "ipv6": {
+                                                            "value": "fe80::28a:96ff:fe46:3404"
+                                                        }
+                                                    }
+                                                ],
+                                                "unnumbered_interface_name": ""
+                                            }
+                                        },
+                                        "prefix_status": {
+                                            "status": "isis-known",
+                                            "prefix_data": {
+                                                "prefix": [
+                                                    {
+                                                        "af_name": "ipv6",
+                                                        "ipv6": {
+                                                            "prefix": "2001:db8:cafe::",
+                                                            "prefix_length": 64
+                                                        }
+                                                    },
+                                                    {
+                                                        "af_name": "ipv6",
+                                                        "ipv6": {
+                                                            "prefix": "2001:f00:bb::",
+                                                            "prefix_length": 64
+                                                        }
+                                                    }
+                                                ],
+                                                "is_unnumbered": false
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                },
+                "nsr_intf": false
+            }
+        }
+    ]
+}

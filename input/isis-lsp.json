@@ -13,7 +13,7 @@
             "Timestamp": 1495073881691,
             "Keys": {
                 "instance_name": "BB2",
-                "level": "2",
+                "level": "level2",
                 "lsp_id": "0151.0250.0001.00-00"
             },
             "Content": {
@@ -38,7 +38,7 @@
             "Timestamp": 1495073881691,
             "Keys": {
                 "instance_name": "BB2",
-                "level": "2",
+                "level": "level2",
                 "lsp_id": "0151.0250.0002.00-00"
             },
             "Content": {

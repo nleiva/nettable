@@ -43,6 +43,21 @@ $ ./showtable -f ../../input/isis-int.json -i isis-int
 +------------------------+--------------------+---------------+-----------+--------------------------+--------------------+
 ```
 
+```console
+$ ./showtable -f ../../input/isis-int2.json -i isis-int
++------------------------+--------------------+---------------+-----------+--------------------------+--------------------+
+|        HOSTNAME        |     INTERFACE      |    CONFIG     |  STATUS   |        FW ADDRESS        |       PREFIX       |
++------------------------+--------------------+---------------+-----------+--------------------------+--------------------+
+| mrstn-5502-2.cisco.com | Loopback60         | isis-disabled | isis-up   | <nil>                    | 2001:558:2::2/128  |
+| mrstn-5502-2.cisco.com | Bundle-Ether20     | isis-disabled | isis-down | fe80::28a:96ff:fe46:34db | 2001:f00:bc::/64   |
+| mrstn-5502-2.cisco.com | Bundle-Ether30     | isis-disabled | isis-down | fe80::28a:96ff:fe46:34da | 2001:f00:bd::/64   |
+| mrstn-5502-2.cisco.com | Bundle-Ether40     | isis-disabled | isis-down | fe80::28a:96ff:fe46:34d9 | 2001:f00:be::/64   |
+| mrstn-5502-2.cisco.com | HundredGigE0/0/0/0 | isis-enabled  | isis-up   | fe80::28a:96ff:fe46:3400 | 2001:f00:ba::/64   |
+| mrstn-5502-2.cisco.com | HundredGigE0/0/0/1 | isis-enabled  | isis-up   | fe80::28a:96ff:fe46:3404 | 2001:db8:cafe::/64 |
+| mrstn-5502-2.cisco.com | HundredGigE0/0/0/1 | isis-enabled  | isis-up   | fe80::28a:96ff:fe46:3404 | 2001:f00:bb::/64   |
++------------------------+--------------------+---------------+-----------+--------------------------+--------------------+
+```
+
 ### IS-IS Neigbors
 
 From [showtable](example/showtable) example:
@@ -54,6 +69,16 @@ $ ./showtable -f ../../input/isis-nbr.json -i isis-nbr
 +------------------------+--------------------+--------------+----------------+--------------------------+
 | mrstn-5502-1.cisco.com | HundredGigE0/0/0/0 | 49.0000.0162 | 0151.0250.0002 | fe80::28a:96ff:fe46:3400 |
 | mrstn-5502-1.cisco.com | HundredGigE0/0/0/1 | 49.0000.0162 | 0151.0250.0002 | fe80::28a:96ff:fe46:3404 |
++------------------------+--------------------+--------------+----------------+--------------------------+
+```
+
+```console
+$ ./showtable -f ../../input/isis-nbr2.json -i isis-nbr
++------------------------+--------------------+--------------+----------------+--------------------------+
+|        HOSTNAME        |     INTERFACE      |     AREA     |   REMOTE ID    |        FW ADDRESS        |
++------------------------+--------------------+--------------+----------------+--------------------------+
+| mrstn-5502-2.cisco.com | HundredGigE0/0/0/0 | 49.0000.0162 | 0151.0250.0001 | fe80::28a:96ff:fe46:6c00 |
+| mrstn-5502-2.cisco.com | HundredGigE0/0/0/1 | 49.0000.0162 | 0151.0250.0001 | fe80::28a:96ff:fe46:6c04 |
 +------------------------+--------------------+--------------+----------------+--------------------------+
 ```
 
@@ -71,12 +96,22 @@ $ ./showtable -f ../../input/isis-lsp.json -i isis-lsp
 +----------------+------------------------+----------------+--------+
 ```
 
+```console
+$ ./showtable -f ../../input/isis-lsp2.json -i isis-lsp
++----------------+------------------------+----------------+--------+
+|    LOCAL ID    |        HOSTNAME        |   REMOTE ID    | METRIC |
++----------------+------------------------+----------------+--------+
+| 0151.0250.0001 | mrstn-5502-1.cisco.com | 0151.0250.0002 |    333 |
+| 0151.0250.0002 | mrstn-5502-2.cisco.com | 0151.0250.0001 |     10 |
++----------------+------------------------+----------------+--------+
+```
+
 ### Interface Counters
 
 From [showtable](example/showtable) example:
 
 ```console
-$ /showtable -f ../../input/int-count.json -i int-count
+$ ./showtable -f ../../input/int-count.json -i int-count
 +------------------------+---------------------+-----------+-----------+-------+---------+----------+
 |        HOSTNAME        |      INTERFACE      | PKTS SENT | PKTS RECV | TRANS | IN ERRS | OUT ERRS |
 +------------------------+---------------------+-----------+-----------+-------+---------+----------+
@@ -92,6 +127,34 @@ $ /showtable -f ../../input/int-count.json -i int-count
 ...
 | mrstn-5502-1.cisco.com | FortyGigE0/0/0/34   |         0 |         0 |     0 |       0 |        0 |
 | mrstn-5502-1.cisco.com | FortyGigE0/0/0/38   |         0 |         0 |     0 |       0 |        0 |
++------------------------+---------------------+-----------+-----------+-------+---------+----------+
+```
+
+```console
+$ ./showtable -f ../../input/int-count2.json -i int-count
++------------------------+---------------------+-----------+-----------+-------+---------+----------+
+|        HOSTNAME        |      INTERFACE      | PKTS SENT | PKTS RECV | TRANS | IN ERRS | OUT ERRS |
++------------------------+---------------------+-----------+-----------+-------+---------+----------+
+| mrstn-5502-2.cisco.com | Null0               |         0 |         0 |     0 |       0 |        0 |
+| mrstn-5502-2.cisco.com | Bundle-Ether20      |         0 |         0 |     0 |       0 |        0 |
+| mrstn-5502-2.cisco.com | Bundle-Ether30      |         0 |         0 |     0 |       0 |        0 |
+| mrstn-5502-2.cisco.com | Bundle-Ether40      |         0 |         0 |     0 |       0 |        0 |
+| mrstn-5502-2.cisco.com | MgmtEth0/RP0/CPU0/0 |   1886191 |    426258 |     3 |       0 |        0 |
+| mrstn-5502-2.cisco.com | HundredGigE0/0/0/0  |    313546 |    313561 |     5 |       0 |        0 |
+| mrstn-5502-2.cisco.com | HundredGigE0/0/0/47 |         0 |         0 |     0 |       0 |        0 |
+| mrstn-5502-2.cisco.com | HundredGigE0/0/0/46 |         0 |         0 |     0 |       0 |        0 |
+| mrstn-5502-2.cisco.com | HundredGigE0/0/0/45 |         0 |         0 |     0 |       0 |        0 |
+| mrstn-5502-2.cisco.com | HundredGigE0/0/0/1  |    741369 |    753244 |     1 |       0 |        0 |
+...
+| mrstn-5502-2.cisco.com | HundredGigE0/0/0/21 |         0 |         0 |     0 |       0 |        0 |
+| mrstn-5502-2.cisco.com | HundredGigE0/0/0/22 |         0 |         0 |     0 |       0 |        0 |
+...
+| mrstn-5502-2.cisco.com | FortyGigE0/0/0/34   |         0 |         0 |     0 |       0 |        0 |
+| mrstn-5502-2.cisco.com | FortyGigE0/0/0/14   |         0 |         0 |     0 |       0 |        0 |
+| mrstn-5502-2.cisco.com | TenGigE0/0/0/10/0   |         0 |         0 |     0 |       0 |        0 |
+| mrstn-5502-2.cisco.com | TenGigE0/0/0/10/1   |         0 |         0 |     0 |       0 |        0 |
+| mrstn-5502-2.cisco.com | TenGigE0/0/0/10/2   |         0 |         0 |     0 |       0 |        0 |
+| mrstn-5502-2.cisco.com | TenGigE0/0/0/10/3   |         0 |         0 |     0 |       0 |        0 |
 +------------------------+---------------------+-----------+-----------+-------+---------+----------+
 ```
 
@@ -116,6 +179,34 @@ $ ./showtable -f ../../input/int-rate.json -i int-rate
 ...
 | mrstn-5502-1.cisco.com | FortyGigE0/0/0/34   |       0 |        0 |  40000000 |
 | mrstn-5502-1.cisco.com | FortyGigE0/0/0/38   |       0 |        0 |  40000000 |
++------------------------+---------------------+---------+----------+-----------+
+```
+
+```console
+$ ./showtable -f ../../input/int-rate2.json -i int-rate
++------------------------+---------------------+---------+----------+-----------+
+|        HOSTNAME        |      INTERFACE      | IN KBPS | OUT KBPS |    BW     |
++------------------------+---------------------+---------+----------+-----------+
+| mrstn-5502-2.cisco.com | Null0               |       0 |        0 |         0 |
+| mrstn-5502-2.cisco.com | Bundle-Ether20      |       0 |        0 |         0 |
+| mrstn-5502-2.cisco.com | Bundle-Ether30      |       0 |        0 |         0 |
+| mrstn-5502-2.cisco.com | Bundle-Ether40      |       0 |        0 |         0 |
+| mrstn-5502-2.cisco.com | MgmtEth0/RP0/CPU0/0 |       1 |        4 |   1000000 |
+| mrstn-5502-2.cisco.com | HundredGigE0/0/0/0  |     178 |      176 | 100000000 |
+| mrstn-5502-2.cisco.com | HundredGigE0/0/0/47 |       0 |        0 | 100000000 |
+| mrstn-5502-2.cisco.com | HundredGigE0/0/0/46 |       0 |        0 | 100000000 |
+| mrstn-5502-2.cisco.com | HundredGigE0/0/0/45 |       0 |        0 | 100000000 |
+| mrstn-5502-2.cisco.com | HundredGigE0/0/0/1  |       7 |        7 | 100000000 |
+...
+| mrstn-5502-2.cisco.com | HundredGigE0/0/0/21 |       0 |        0 | 100000000 |
+| mrstn-5502-2.cisco.com | HundredGigE0/0/0/22 |       0 |        0 | 100000000 |
+...
+| mrstn-5502-2.cisco.com | FortyGigE0/0/0/34   |       0 |        0 |  40000000 |
+| mrstn-5502-2.cisco.com | FortyGigE0/0/0/14   |       0 |        0 |  40000000 |
+| mrstn-5502-2.cisco.com | TenGigE0/0/0/10/0   |       0 |        0 |  10000000 |
+| mrstn-5502-2.cisco.com | TenGigE0/0/0/10/1   |       0 |        0 |  10000000 |
+| mrstn-5502-2.cisco.com | TenGigE0/0/0/10/2   |       0 |        0 |  10000000 |
+| mrstn-5502-2.cisco.com | TenGigE0/0/0/10/3   |       0 |        0 |  10000000 |
 +------------------------+---------------------+---------+----------+-----------+
 ```
 

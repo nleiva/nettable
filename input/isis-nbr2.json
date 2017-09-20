@@ -1,0 +1,108 @@
+{
+    "Source": "[2001:420:2cff:1204::5502:2]:61544",
+    "Telemetry": {
+        "node_id_str": "mrstn-5502-2.cisco.com",
+        "subscription_id_str": "IS-IS",
+        "encoding_path": "Cisco-IOS-XR-clns-isis-oper:isis/instances/instance/neighbors/neighbor",
+        "collection_id": 36,
+        "collection_start_time": 1505923365243,
+        "msg_timestamp": 1505923365243,
+        "collection_end_time": 1505923365251
+    },
+    "Rows": [
+        {
+            "Timestamp": 1505923365248,
+            "Keys": {
+                "instance_name": "BB2",
+                "system_id": "0151.0250.0001",
+                "interface_name": "HundredGigE0/0/0/0"
+            },
+            "Content": {
+                "neighbor_system_id": "0151.0250.0001",
+                "neighbor_snpa": "0000.0000.0000",
+                "local_interface": "HundredGigE0/0/0/0",
+                "neighbor_state": "isis-adj-up-state",
+                "neighbor_circuit_type": "isis-levels-2",
+                "neighbor_ietf_nsf_capable_flag": 1,
+                "neighbor_media_type": "isis-media-class-p2p",
+                "neighbor_holdtime": 23,
+                "neighbor_active_area_addresses": [
+                    {
+                        "value": "49.0000.0162"
+                    }
+                ],
+                "neighbor_uptime_valid_flag": true,
+                "neighbor_uptime": 521631,
+                "topologies_supported": [
+                    {
+                        "af_name": "ipv6",
+                        "saf_name": "unicast",
+                        "vrf_name": "",
+                        "topology_name": ""
+                    }
+                ],
+                "neighbor_per_address_family_data": [
+                    {
+                        "af_name": "ipv6",
+                        "ipv6": {
+                            "next_hop": "fe80::28a:96ff:fe46:6c00",
+                            "interface_addresses": [
+                                {
+                                    "value": "fe80::28a:96ff:fe46:6c00"
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "nsr_standby": false
+            }
+        },
+        {
+            "Timestamp": 1505923365248,
+            "Keys": {
+                "instance_name": "BB2",
+                "system_id": "0151.0250.0001",
+                "interface_name": "HundredGigE0/0/0/1"
+            },
+            "Content": {
+                "neighbor_system_id": "0151.0250.0001",
+                "neighbor_snpa": "0000.0000.0000",
+                "local_interface": "HundredGigE0/0/0/1",
+                "neighbor_state": "isis-adj-up-state",
+                "neighbor_circuit_type": "isis-levels-2",
+                "neighbor_ietf_nsf_capable_flag": 1,
+                "neighbor_media_type": "isis-media-class-p2p",
+                "neighbor_holdtime": 28,
+                "neighbor_active_area_addresses": [
+                    {
+                        "value": "49.0000.0162"
+                    }
+                ],
+                "neighbor_uptime_valid_flag": true,
+                "neighbor_uptime": 1639188,
+                "topologies_supported": [
+                    {
+                        "af_name": "ipv6",
+                        "saf_name": "unicast",
+                        "vrf_name": "",
+                        "topology_name": ""
+                    }
+                ],
+                "neighbor_per_address_family_data": [
+                    {
+                        "af_name": "ipv6",
+                        "ipv6": {
+                            "next_hop": "fe80::28a:96ff:fe46:6c04",
+                            "interface_addresses": [
+                                {
+                                    "value": "fe80::28a:96ff:fe46:6c04"
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "nsr_standby": false
+            }
+        }
+    ]
+}

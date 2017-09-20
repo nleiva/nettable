@@ -27,8 +27,10 @@ While the examples presented here were created in an IPv6-only enviroment, addin
 
 ### IS-IS Interfaces
 
+From [showtable](example/showtable) example:
+
 ```console
-example/showtable$ ./showtable -f ../../input/isis-int.json -i isis-int
+$ ./showtable -f ../../input/isis-int.json -i isis-int
 +------------------------+--------------------+---------------+-----------+--------------------------+--------------------+
 |        HOSTNAME        |     INTERFACE      |    CONFIG     |  STATUS   |        FW ADDRESS        |       PREFIX       |
 +------------------------+--------------------+---------------+-----------+--------------------------+--------------------+
@@ -42,8 +44,10 @@ example/showtable$ ./showtable -f ../../input/isis-int.json -i isis-int
 
 ### IS-IS Neigbors
 
+From [showtable](example/showtable) example:
+
 ```console
-example/showtable$ ./showtable -f ../../input/isis-nbr.json -i isis-nbr
+$ ./showtable -f ../../input/isis-nbr.json -i isis-nbr
 +------------------------+--------------------+--------------+----------------+--------------------------+
 |        HOSTNAME        |     INTERFACE      |     AREA     |   REMOTE ID    |        FW ADDRESS        |
 +------------------------+--------------------+--------------+----------------+--------------------------+
@@ -54,8 +58,10 @@ example/showtable$ ./showtable -f ../../input/isis-nbr.json -i isis-nbr
 
 ### Interface Counters
 
+From [showtable](example/showtable) example:
+
 ```console
-example/showtable$ /showtable -f ../../input/int-count.json -i int-count
+$ /showtable -f ../../input/int-count.json -i int-count
 +------------------------+---------------------+-----------+-----------+-------+---------+----------+
 |        HOSTNAME        |      INTERFACE      | PKTS SENT | PKTS RECV | TRANS | IN ERRS | OUT ERRS |
 +------------------------+---------------------+-----------+-----------+-------+---------+----------+
@@ -76,8 +82,10 @@ example/showtable$ /showtable -f ../../input/int-count.json -i int-count
 
 ### Interface Data Rates
 
+From [showtable](example/showtable) example:
+
 ```console
-example/showtable$ ./showtable -f ../../input/int-rate.json -i int-rate
+$ ./showtable -f ../../input/int-rate.json -i int-rate
 +------------------------+---------------------+---------+----------+-----------+
 |        HOSTNAME        |      INTERFACE      | IN KBPS | OUT KBPS |    BW     |
 +------------------------+---------------------+---------+----------+-----------+

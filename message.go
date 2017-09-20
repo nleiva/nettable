@@ -2,10 +2,10 @@ package nettable
 
 import "net"
 
-// ISISLsp represents the format of a Cisco-IOS-XR-clns-isis-oper
+// ISISLSP represents the format of a Cisco-IOS-XR-clns-isis-oper
 // :isis/instances/instance/levels/level/detailed-lsps/detailed-lsp
 // message.
-type ISISLsp struct {
+type ISISLSP struct {
 	Rows []struct {
 		Content struct {
 			LspBody       string `json:"lsp_body,omitempty"`
@@ -26,7 +26,7 @@ type ISISLsp struct {
 		} `json:"Content,omitempty"`
 		Keys struct {
 			InstanceName string `json:"instance_name,omitempty"`
-			Level        string `json:"level,string,omitempty"`
+			Level        uint8  `json:"level,string,omitempty"`
 			LspID        string `json:"lsp_id,omitempty"`
 		} `json:"Keys,omitempty"`
 		Timestamp uint64 `json:"Timestamp,omitempty"`

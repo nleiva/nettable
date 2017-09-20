@@ -15,6 +15,7 @@ func TestMain(t *testing.T) {
 	}{
 		{name: "isis-int", file: "input/isis-int.json"},
 		{name: "isis-nbr", file: "input/isis-nbr.json"},
+		{name: "isis-lsp", file: "input/isis-lsp.json"},
 		{name: "int-count", file: "input/int-count.json"},
 		{name: "int-rate", file: "input/int-rate.json"},
 	}
@@ -26,6 +27,8 @@ func TestMain(t *testing.T) {
 			container = new(nt.Iints)
 		case "isis-nbr":
 			container = new(nt.Inbrs)
+		case "isis-lsp":
+			container = new(nt.ILSPs)
 		case "int-count":
 			container = new(nt.Icounts)
 		case "int-rate":
@@ -38,7 +41,7 @@ func TestMain(t *testing.T) {
 		}
 		err = nt.ParseTelemetry(container, file, os.Stdout)
 		if err != nil {
-			t.Fatalf("could not parse: %s, file: %s", tc.name, tc.file)
+			t.Fatalf("could not parse: %s, file: %s: %s", tc.name, tc.file, err)
 		}
 	}
 

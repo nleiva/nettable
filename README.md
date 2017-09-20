@@ -21,6 +21,7 @@ While the examples presented here were created in an IPv6-only enviroment, addin
   - From *Cisco-IOS-XR-clns-isis-oper*
     - **isis-int**: IS-IS Interfaces (*:isis/instances/instance/interfaces/interface*)
     - **isis-nbr**: IS-IS Neigbors (*:isis/instances/instance/neighbors/neighbor*)
+    - **isis-lsp**: IS-IS LSPs (*:isis/instances/instance/levels/level/detailed-lsps/detailed-lsp*)
   - From *Cisco-IOS-XR-infra-statsd-oper*
     - **int-count**: Interface Counters (*:infra-statistics/interfaces/interface/latest/generic-counters*)
     - **int-rate**: Interface Data Rates (*:infra-statistics/interfaces/interface/data-rate*)
@@ -54,6 +55,20 @@ $ ./showtable -f ../../input/isis-nbr.json -i isis-nbr
 | mrstn-5502-1.cisco.com | HundredGigE0/0/0/0 | 49.0000.0162 | 0151.0250.0002 | fe80::28a:96ff:fe46:3400 |
 | mrstn-5502-1.cisco.com | HundredGigE0/0/0/1 | 49.0000.0162 | 0151.0250.0002 | fe80::28a:96ff:fe46:3404 |
 +------------------------+--------------------+--------------+----------------+--------------------------+
+```
+
+### IS-IS LSPs
+
+From [showtable](example/showtable) example:
+
+```console
+$ ./showtable -f ../../input/isis-lsp.json -i isis-lsp
++----------------+------------------------+----------------+--------+
+|    LOCAL ID    |        HOSTNAME        |   REMOTE ID    | METRIC |
++----------------+------------------------+----------------+--------+
+| 0151.0250.0001 | mrstn-5502-1.cisco.com | 0151.0250.0002 |     10 |
+| 0151.0250.0002 | mrstn-5502-2.cisco.com | 0151.0250.0001 |     10 |
++----------------+------------------------+----------------+--------+
 ```
 
 ### Interface Counters

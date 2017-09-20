@@ -26,6 +26,7 @@ type iint struct {
 type neighbor struct {
 	remoteID string
 	metric   uint32
+	mtid     string
 }
 
 type prefix struct {

@@ -1,0 +1,63 @@
+{ "Source": "[2001:420:2cff:1204::5502:1]:36597",
+  "Telemetry": {
+        "node_id_str": "mrstn-5502-1.cisco.com",
+        "subscription_id_str": "SUBS",
+        "encoding_path": "Cisco-IOS-XR-clns-isis-oper:isis/instances/instance/levels/level/detailed-lsps/detailed-lsp",
+        "collection_id": 4840049,
+        "collection_start_time": 1495073881680,
+        "msg_timestamp": 1495073881680,
+        "collection_end_time": 1495073881694
+    },
+    "Rows": [
+        {
+            "Timestamp": 1495073881691,
+            "Keys": {
+                "instance_name": "BB2",
+                "level": "2",
+                "lsp_id": "0151.0250.0001.00-00"
+            },
+            "Content": {
+                "lsp_header_data": {
+                    "lsp_id": "0151.0250.0001.00-00",
+                    "local_lsp_flag": true,
+                    "lsp_active_flag": true,
+                    "lsp_holdtime": 1267,
+                    "lsp_sequence_number": 417,
+                    "lsp_checksum": 39007,
+                    "lsp_parition_repair_supported_flag": false,
+                    "lsp_attached_flag": false,
+                    "lsp_overloaded_flag": false,
+                    "lsp_non_v1_a_flag": 1,
+                    "lsp_level": "isis-levels-2",
+                    "lsp_length": 202
+                },
+                "lsp_body": "AVECUAABAAAAAAGhmF8DChE2UXXOOdOXfsTUjeD2Vp35cgEGBUkAAAFigQGO5QIAAokWbXJzdG4tNTUwMi0xLmNpc2NvLmNvbegQIAEFWAACAAAAAAAAAAAAAd4NAAIBUQJQAAIAAAAKAO1SAAIAAAABIIAgAQVYAAIAAAAAAAAAAAABAwQBIAAAAAogQCABDwAAugAAAwQBAAAAAAogQCABDwAAuwAAAwQBAAAAAAogQCABDwAAvAAAAwQBAA=="
+            }
+        },
+        {
+            "Timestamp": 1495073881691,
+            "Keys": {
+                "instance_name": "BB2",
+                "level": "2",
+                "lsp_id": "0151.0250.0002.00-00"
+            },
+            "Content": {
+                "lsp_header_data": {
+                    "lsp_id": "0151.0250.0002.00-00",
+                    "local_lsp_flag": false,
+                    "lsp_active_flag": true,
+                    "lsp_holdtime": 1017,
+                    "lsp_sequence_number": 13,
+                    "lsp_checksum": 28489,
+                    "lsp_parition_repair_supported_flag": false,
+                    "lsp_attached_flag": false,
+                    "lsp_overloaded_flag": false,
+                    "lsp_non_v1_a_flag": 0,
+                    "lsp_level": "isis-levels-2",
+                    "lsp_length": 238
+                },
+                "lsp_body": "AVECUAACAAAAAAANb0kDChE2qzGHORPLqjGVYAZIkTzGGQEGBUkAAAFigQGO5QIAAokWbXJzdG4tNTUwMi0yLmNpc2NvLmNvbegQIAEFWAACAAAAAAAAAAAAAt4NAAIBUQJQAAEAAAAKAO12AAIAAAABIIAgAQVYAAIAAAAAAAAAAAACAwQBIAAAAAogQCABDwAAugAAAwQBAAAAAAogQCABDwAAuwAAAwQBAAAAAAogQCABDwAAvAAAAwQBAAAA/eggQCABDwAAvQAAAwQBAAAA/eggQCABDwAAvgAAAwQBAA=="
+            }
+        }
+    ]
+}

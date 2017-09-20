@@ -38,7 +38,10 @@ func (d *Inbrs) Read(r io.Reader) error {
 		// Interface Name
 		i.intName = b.Content.LocalInterface
 		// Area
-		i.area = b.Content.NeighborActiveAreaAddresses[0].Value
+		aa := b.Content.NeighborActiveAreaAddresses
+		if len(aa) > 0 {
+			i.area = aa[0].Value
+		}
 		// Remote SystemID
 		i.remoteID = b.Content.NeighborSystemID
 		af := b.Content.NeighborPerAddressFamilyData

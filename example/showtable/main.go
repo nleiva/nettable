@@ -26,6 +26,8 @@ func main() {
 		container = new(nt.Iints)
 	case "isis-nbr":
 		container = new(nt.Inbrs)
+	case "isis-lsp":
+		container = new(nt.ILSPs)
 	case "int-count":
 		container = new(nt.Icounts)
 	case "int-rate":

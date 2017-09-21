@@ -10,6 +10,21 @@
 
 While the examples presented here were created in an IPv6-only enviroment, adding IPv4 support is straight forward (TODO).
 
+## Table of Contents
+
+- [Parsing Telemetry data from IOS XR YANG models](#parsing-telemetry-data-from-ios-xr-yang-models)
+  * [Use](#use)
+    + [Options](#options)
+  * [Examples](#examples)
+    + [IS-IS Interfaces](#is-is-interfaces)
+    + [IS-IS Neigbors](#is-is-neigbors)
+    + [IS-IS LSPs](#is-is-lsps)
+    + [Interface Counters](#interface-counters)
+    + [Interface Data Rates](#interface-data-rates)
+    + [IPv6 Routing Table](#ipv6-routing-table)
+  * [Links](#links)
+
+
 ## Use
 
 `nettable` reads an IOS XR Telemetry file, parses fields of interest and produces a summary table. This helps visualizing the data, however this info should be actually sent to a database.
@@ -30,6 +45,8 @@ While the examples presented here were created in an IPv6-only enviroment, addin
     - Cisco-IOS-XR-infra-statsd-oper (*:infra-statistics/interfaces/interface/data-rate*) 
   - IPv6 Route Table: `rib-ipv6`
     - Cisco-IOS-XR-ip-rib-ipv6-oper (*:ipv6-rib/vrfs/vrf/afs/af/safs/saf/ip-rib-route-table-names/ip-rib-route-table-name/routes/route*)
+
+## Examples
 
 ### IS-IS Interfaces
 

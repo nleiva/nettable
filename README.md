@@ -210,6 +210,62 @@ $ ./showtable -f ../../input/int-rate2.json -i int-rate
 +------------------------+---------------------+---------+----------+-----------+
 ```
 
+### IPv6 Routing Table
+
+From [showtable](example/showtable) example:
+
+```console
+$ ./showtable -f ../../input/rib-ipv6.json -i rib-ipv6
++------------------------+-------------------------+-----------+--------------------------+--------------------------+--------+
+|        HOSTNAME        |         PREFIX          | PROTOCOL  |         NEXT HOP         |          SOURCE          | METRIC |
++------------------------+-------------------------+-----------+--------------------------+--------------------------+--------+
+| mrstn-5502-1.cisco.com | ::/0                    | static    | 2001:420:2cff:1204::1    | 2001:420:2cff:1204::1    |      0 |
+| mrstn-5502-1.cisco.com | 2001:420:2cff:1204::/64 | bgp       | 2001:db8:cafe::2         | 2001:db8:cafe::2         |      0 |
+| mrstn-5502-1.cisco.com | 2001:558:2::1/128       | local     | ::                       | ::                       |      0 |
+| mrstn-5502-1.cisco.com | 2001:558:2::2/128       | isis      | fe80::28a:96ff:fe46:3400 | fe80::28a:96ff:fe46:3400 |    334 |
+| mrstn-5502-1.cisco.com | 2001:db8:33::1/128      | local     | ::                       | ::                       |      0 |
+| mrstn-5502-1.cisco.com | 2001:db8:55::/64        | bgp       | 2001:db8:cafe::2         | 2001:db8:cafe::2         |      0 |
+| mrstn-5502-1.cisco.com | 2001:db8:77::/64        | bgp       | 2001:db8:cafe::2         | 2001:db8:cafe::2         |      0 |
+| mrstn-5502-1.cisco.com | 2001:db8:88:88::/64     | connected | ::                       | ::                       |      0 |
+| mrstn-5502-1.cisco.com | 2001:db8:88:88::1/128   | local     | ::                       | ::                       |      0 |
+| mrstn-5502-1.cisco.com | 2001:db8:cafe::/64      | connected | ::                       | ::                       |      0 |
+| mrstn-5502-1.cisco.com | 2001:db8:cafe::1/128    | local     | ::                       | ::                       |      0 |
+| mrstn-5502-1.cisco.com | 2001:f00:ba::/64        | connected | ::                       | ::                       |      0 |
+| mrstn-5502-1.cisco.com | 2001:f00:ba::1/128      | local     | ::                       | ::                       |      0 |
+| mrstn-5502-1.cisco.com | 2001:f00:bb::/64        | connected | ::                       | ::                       |      0 |
+| mrstn-5502-1.cisco.com | 2001:f00:bb::1/128      | local     | ::                       | ::                       |      0 |
++------------------------+-------------------------+-----------+--------------------------+--------------------------+--------+
+```
+
+```console
+$ ./showtable -f ../../input/rib-ipv62.json -i rib-ipv6
++------------------------+--------------------------------+-------------+--------------------------+--------------------------+--------+
+|        HOSTNAME        |             PREFIX             |  PROTOCOL   |         NEXT HOP         |          SOURCE          | METRIC |
++------------------------+--------------------------------+-------------+--------------------------+--------------------------+--------+
+| mrstn-5502-2.cisco.com | ::/0                           | static      | 2001:420:2cff:1204::1    | 2001:420:2cff:1204::1    |      0 |
+| mrstn-5502-2.cisco.com | 4::4/128                       | static      | ::                       | ::                       |      0 |
+| mrstn-5502-2.cisco.com | 100::100/128                   | application | 4::4                     | 4::4                     |      0 |
+| mrstn-5502-2.cisco.com | 101::101/128                   | application | 5::5                     | 5::5                     |      0 |
+| mrstn-5502-2.cisco.com | 102::102/128                   | application | 6::6                     | 6::6                     |      0 |
+| mrstn-5502-2.cisco.com | 2001:420:2cff:1204::/64        | connected   | ::                       | ::                       |      0 |
+| mrstn-5502-2.cisco.com | 2001:420:2cff:1204::5502:2/128 | local       | ::                       | ::                       |      0 |
+| mrstn-5502-2.cisco.com | 2001:558:2::1/128              | isis        | fe80::28a:96ff:fe46:6c00 | fe80::28a:96ff:fe46:6c00 |     11 |
+| mrstn-5502-2.cisco.com | 2001:558:2::2/128              | local       | ::                       | ::                       |      0 |
+| mrstn-5502-2.cisco.com | 2001:db8:33::1/128             | bgp         | 2001:db8:cafe::1         | 2001:db8:cafe::1         |      0 |
+| mrstn-5502-2.cisco.com | 2001:db8:55::/64               | connected   | ::                       | ::                       |      0 |
+| mrstn-5502-2.cisco.com | 2001:db8:55::1/128             | local       | ::                       | ::                       |      0 |
+| mrstn-5502-2.cisco.com | 2001:db8:77::/64               | connected   | ::                       | ::                       |      0 |
+| mrstn-5502-2.cisco.com | 2001:db8:77::1/128             | local       | ::                       | ::                       |      0 |
+| mrstn-5502-2.cisco.com | 2001:db8:88:88::/64            | bgp         | 2001:db8:cafe::1         | 2001:db8:cafe::1         |      0 |
+| mrstn-5502-2.cisco.com | 2001:db8:cafe::/64             | connected   | ::                       | ::                       |      0 |
+| mrstn-5502-2.cisco.com | 2001:db8:cafe::2/128           | local       | ::                       | ::                       |      0 |
+| mrstn-5502-2.cisco.com | 2001:f00:ba::/64               | connected   | ::                       | ::                       |      0 |
+| mrstn-5502-2.cisco.com | 2001:f00:ba::2/128             | local       | ::                       | ::                       |      0 |
+| mrstn-5502-2.cisco.com | 2001:f00:bb::/64               | connected   | ::                       | ::                       |      0 |
+| mrstn-5502-2.cisco.com | 2001:f00:bb::2/128             | local       | ::                       | ::                       |      0 |
++------------------------+--------------------------------+-------------+--------------------------+--------------------------+--------+
+```
+
 ## Links
 
 - [Pipeline](https://github.com/cisco/bigmuddy-network-telemetry-pipeline): Telemetry Collector

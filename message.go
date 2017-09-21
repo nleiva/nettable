@@ -373,3 +373,105 @@ type IntRate struct {
 		SubscriptionIDStr   string `json:"subscription_id_str,omitempty"`
 	} `json:"Telemetry,omitempty"`
 }
+
+// RIBIPv6 represents the format of a Cisco-IOS-XR-ip-rib-ipv6-oper
+// :ipv6-rib/vrfs/vrf/afs/af/safs/saf/ip-rib-route-table-names/ip-rib-route-table-name/routes/route
+// message.
+type RIBIPv6 struct {
+	Rows []struct {
+		Content struct {
+			Active             bool   `json:"active,omitempty"`
+			AttributeIDentity  uint32 `json:"attribute_identity,omitempty"`
+			ClientID           uint32 `json:"client_id,omitempty"`
+			Distance           uint32 `json:"distance,omitempty"`
+			Diversion          bool   `json:"diversion,omitempty"`
+			DiversionDistance  uint32 `json:"diversion_distance,omitempty"`
+			DiversionProtoName string `json:"diversion_proto_name,omitempty"`
+			ExtendedFlags      uint64 `json:"extended_flags,omitempty"`
+			Flags              uint32 `json:"flags,omitempty"`
+			FlowTag            uint32 `json:"flow_tag,omitempty"`
+			FwdClass           uint32 `json:"fwd_class,omitempty"`
+			Instance           string `json:"instance,omitempty"`
+			Metric             uint32 `json:"metric,omitempty"`
+			PathsCount         uint32 `json:"paths_count,omitempty"`
+			PicCount           uint32 `json:"pic_count,omitempty"`
+			Prefix             net.IP `json:"prefix,omitempty"`
+			PrefixLength       uint32 `json:"prefix_length,omitempty"`
+			Priority           uint32 `json:"priority,omitempty"`
+			ProtocolID         uint32 `json:"protocol_id,omitempty"`
+			ProtocolName       string `json:"protocol_name,omitempty"`
+			QosGroup           uint32 `json:"qos_group,omitempty"`
+			RouteAge           uint32 `json:"route_age,omitempty"`
+			RouteLabel         uint32 `json:"route_label,omitempty"`
+			RouteModifyTime    uint64 `json:"route_modify_time,omitempty"`
+			RoutePath          struct {
+				Ipv6RibEdmPath []struct {
+					Address                     net.IP `json:"address,omitempty"`
+					BackupPathid                uint32 `json:"backup_pathid,omitempty"`
+					BindingLabel                uint32 `json:"binding_label,omitempty"`
+					Flags                       uint32 `json:"flags,omitempty"`
+					Flags64                     uint64 `json:"flags64,omitempty"`
+					HasLabelstk                 bool   `json:"has_labelstk,omitempty"`
+					InformationSource           net.IP `json:"information_source,omitempty"`
+					InterfaceName               net.IP `json:"interface_name,omitempty"`
+					LoadMetric                  uint32 `json:"load_metric,omitempty"`
+					Looped                      bool   `json:"looped,omitempty"`
+					Metric                      uint32 `json:"metric,omitempty"`
+					MplsFeid                    uint64 `json:"mpls_feid,omitempty"`
+					MvpnPresent                 bool   `json:"mvpn_present,omitempty"`
+					NextHopAfi                  int64  `json:"next_hop_afi,omitempty"`
+					NextHopID                   uint32 `json:"next_hop_id,omitempty"`
+					NextHopIDRefcount           uint32 `json:"next_hop_id_refcount,omitempty"`
+					NextHopSafi                 uint32 `json:"next_hop_safi,omitempty"`
+					NextHopTableID              uint32 `json:"next_hop_table_id,omitempty"`
+					NextHopTableName            string `json:"next_hop_table_name,omitempty"`
+					NextHopVrfName              string `json:"next_hop_vrf_name,omitempty"`
+					NhidFeid                    uint64 `json:"nhid_feid,omitempty"`
+					NumLabels                   uint32 `json:"num_labels,omitempty"`
+					NumberOfExtendedCommunities uint32 `json:"number_of_extended_communities,omitempty"`
+					OspfAreaID                  string `json:"ospf_area_id,omitempty"`
+					Pathid                      uint32 `json:"pathid,omitempty"`
+					PathrtPresent               bool   `json:"pathrt_present,omitempty"`
+					PrivateFlags                uint32 `json:"private_flags,omitempty"`
+					RefCntOfBackup              uint32 `json:"ref_cnt_of_backup,omitempty"`
+					RouteLabel                  uint32 `json:"route_label,omitempty"`
+					SegmentedNexthopPresent     bool   `json:"segmented_nexthop_present,omitempty"`
+					SourceasrtPresent           bool   `json:"sourceasrt_present,omitempty"`
+					SourcerdPresent             bool   `json:"sourcerd_present,omitempty"`
+					TunnelID                    uint32 `json:"tunnel_id,omitempty"`
+					V6Nexthop                   net.IP `json:"v6_nexthop,omitempty"`
+					VrfimportrtPresent          bool   `json:"vrfimportrt_present,omitempty"`
+				} `json:"ipv6_rib_edm_path,omitempty"`
+			} `json:"route_path,omitempty"`
+			RoutePrecedence uint32 `json:"route_precedence,omitempty"`
+			RouteType       uint32 `json:"route_type,omitempty"`
+			RouteVersion    uint32 `json:"route_version,omitempty"`
+			SvdType         uint32 `json:"svd_type,omitempty"`
+			Tag             uint32 `json:"tag,omitempty"`
+			TblVersion      uint32 `json:"tbl_version,omitempty"`
+			TrafficIndex    uint32 `json:"traffic_index,omitempty"`
+			Version         uint32 `json:"version,omitempty"`
+		} `json:"Content,omitempty"`
+		Keys struct {
+			Address        string `json:"address,omitempty"`
+			AfName         string `json:"af_name,omitempty"`
+			InterfaceName  string `json:"interface_name,omitempty"`
+			NextHopAddress string `json:"next_hop_address,omitempty"`
+			PrefixLength   uint32 `json:"prefix_length,omitempty"`
+			RouteTableName string `json:"route_table_name,omitempty"`
+			SafName        string `json:"saf_name,omitempty"`
+			VrfName        string `json:"vrf_name,omitempty"`
+		} `json:"Keys,omitempty"`
+		Timestamp int64 `json:"Timestamp,omitempty"`
+	} `json:"Rows,omitempty"`
+	Source    string `json:"Source,omitempty"`
+	Telemetry struct {
+		CollectionEndTime   uint64 `json:"collection_end_time,omitempty"`
+		CollectionID        uint64 `json:"collection_id,omitempty"`
+		CollectionStartTime uint64 `json:"collection_start_time,omitempty"`
+		EncodingPath        string `json:"encoding_path,omitempty"`
+		MsgTimestamp        uint64 `json:"msg_timestamp,omitempty"`
+		NodeIDStr           string `json:"node_id_str,omitempty"`
+		SubscriptionIDStr   string `json:"subscription_id_str,omitempty"`
+	} `json:"Telemetry,omitempty"`
+}

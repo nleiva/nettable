@@ -32,6 +32,8 @@ func main() {
 		container = new(nt.Icounts)
 	case "int-rate":
 		container = new(nt.Irates)
+	case "rib-ipv6":
+		container = new(nt.RIPv6s)
 	default:
 		log.Fatalf("Type of info unknown: %s", *info)
 	}

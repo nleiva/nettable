@@ -11,18 +11,26 @@ func TestMain(t *testing.T) {
 	tt := []struct {
 		name string
 		file string
+		ty   string
 		err  string
 	}{
-		{name: "isis-int", file: "input/isis-int.json"},
-		{name: "isis-nbr", file: "input/isis-nbr.json"},
-		{name: "isis-lsp", file: "input/isis-lsp.json"},
-		{name: "int-count", file: "input/int-count.json"},
-		{name: "int-rate", file: "input/int-rate.json"},
+		{name: "ISIS Interface 1", ty: "isis-int", file: "input/isis-int.json"},
+		{name: "ISIS Neighbor 1", ty: "isis-nbr", file: "input/isis-nbr.json"},
+		{name: "ISIS LSP 1", ty: "isis-lsp", file: "input/isis-lsp.json"},
+		{name: "Interface Counters 1", ty: "int-count", file: "input/int-count.json"},
+		{name: "Interface Data Rates 1", ty: "int-rate", file: "input/int-rate.json"},
+		{name: "IPv6 RIB Table", ty: "rib-ipv6", file: "input/rib-ipv6.json"},
+		{name: "ISIS Interface 2", ty: "isis-int", file: "input/isis-int2.json"},
+		{name: "ISIS Neighbor 2", ty: "isis-nbr", file: "input/isis-nbr2.json"},
+		{name: "ISIS LSP 2", ty: "isis-lsp", file: "input/isis-lsp2.json"},
+		{name: "Interface Counters 2", ty: "int-count", file: "input/int-count2.json"},
+		{name: "Interface Data Rates 2", ty: "int-rate", file: "input/int-rate2.json"},
+		{name: "IPv6 RIB Table 2", ty: "rib-ipv6", file: "input/rib-ipv62.json"},
 	}
 	var container nt.Parser
 
 	for _, tc := range tt {
-		switch tc.name {
+		switch tc.ty {
 		case "isis-int":
 			container = new(nt.Iints)
 		case "isis-nbr":
@@ -33,6 +41,8 @@ func TestMain(t *testing.T) {
 			container = new(nt.Icounts)
 		case "int-rate":
 			container = new(nt.Irates)
+		case "rib-ipv6":
+			container = new(nt.RIPv6s)
 		default:
 		}
 		file, err := os.Open(tc.file)

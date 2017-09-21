@@ -18,15 +18,18 @@ While the examples presented here were created in an IPv6-only enviroment, addin
 
 - Option -`f` points to the input file 
 - Option -`i` Type of information:
-  - From *Cisco-IOS-XR-clns-isis-oper*
-    - **isis-int**: IS-IS Interfaces (*:isis/instances/instance/interfaces/interface*)
-    - **isis-nbr**: IS-IS Neigbors (*:isis/instances/instance/neighbors/neighbor*)
-    - **isis-lsp**: IS-IS LSPs (*:isis/instances/instance/levels/level/detailed-lsps/detailed-lsp*)
-  - From *Cisco-IOS-XR-infra-statsd-oper*
-    - **int-count**: Interface Counters (*:infra-statistics/interfaces/interface/latest/generic-counters*)
-    - **int-rate**: Interface Data Rates (*:infra-statistics/interfaces/interface/data-rate*)
-  - From *Cisco-IOS-XR-ip-rib-ipv6-oper*
-    - **rib-ipv6**: IPv6 Route Table (*:ipv6-rib/vrfs/vrf/afs/af/safs/saf/ip-rib-route-table-names/ip-rib-route-table-name/routes/route*)
+  - IS-IS Interfaces: `isis-int` 
+    - Cisco-IOS-XR-clns-isis-oper (*:isis/instances/instance/interfaces/interface*)
+  - IS-IS Neigbors: `isis-nbr` 
+    - Cisco-IOS-XR-clns-isis-oper (*:isis/instances/instance/neighbors/neighbor*)
+  - IS-IS LSPs: `isis-lsp` 
+    - Cisco-IOS-XR-clns-isis-oper (*:isis/instances/instance/levels/level/detailed-lsps/detailed-lsp*)
+  - Interface Counters: `int-count`
+    - Cisco-IOS-XR-infra-statsd-oper (*:infra-statistics/interfaces/interface/latest/generic-counters*)
+  - Interface Data Rates: `int-rate`
+    - Cisco-IOS-XR-infra-statsd-oper (*:infra-statistics/interfaces/interface/data-rate*) 
+  - IPv6 Route Table: `rib-ipv6`
+    - Cisco-IOS-XR-ip-rib-ipv6-oper (*:ipv6-rib/vrfs/vrf/afs/af/safs/saf/ip-rib-route-table-names/ip-rib-route-table-name/routes/route*)
 
 ### IS-IS Interfaces
 

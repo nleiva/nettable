@@ -17,8 +17,9 @@ While the examples presented here were created in an IPv6-only enviroment, addin
     + [Options](#options)
   * [Examples](#examples)
     + [IS-IS Interfaces](#is-is-interfaces)
-    + [IS-IS Neigbors](#is-is-neigbors)
+    + [IS-IS Neighbors](#is-is-neighbors)
     + [IS-IS LSPs](#is-is-lsps)
+    + [BGP Neighbors](#bgp-neighbors)
     + [Interface Counters](#interface-counters)
     + [Interface Data Rates](#interface-data-rates)
     + [IPv6 Routing Table](#ipv6-routing-table)
@@ -32,13 +33,15 @@ While the examples presented here were created in an IPv6-only enviroment, addin
 ### Options
 
 - Option -`f` points to the input file 
-- Option -`i` Type of information:
+- Option -`i` specifies the type of information:
   - IS-IS Interfaces: `isis-int` 
     - Cisco-IOS-XR-clns-isis-oper (*:isis/instances/instance/interfaces/interface*)
   - IS-IS Neigbors: `isis-nbr` 
     - Cisco-IOS-XR-clns-isis-oper (*:isis/instances/instance/neighbors/neighbor*)
   - IS-IS LSPs: `isis-lsp` 
     - Cisco-IOS-XR-clns-isis-oper (*:isis/instances/instance/levels/level/detailed-lsps/detailed-lsp*)
+  - BGP Neigbors: `bgp-nbr`
+    - Cisco-IOS-XR-ipv4-bgp-oper (*:bgp/instances/instance/instance-active/default-vrf/afs/af/neighbor-af-table/neighbor*)
   - Interface Counters: `int-count`
     - Cisco-IOS-XR-infra-statsd-oper (*:infra-statistics/interfaces/interface/latest/generic-counters*)
   - Interface Data Rates: `int-rate`
@@ -80,7 +83,7 @@ $ ./showtable -f ../../input/isis-int2.json -i isis-int
 +------------------------+--------------------+---------------+-----------+--------------------------+--------------------+
 ```
 
-### IS-IS Neigbors
+### IS-IS Neighbors
 
 From [showtable](example/showtable) example:
 
@@ -126,6 +129,30 @@ $ ./showtable -f ../../input/isis-lsp2.json -i isis-lsp
 | 0151.0250.0001 | mrstn-5502-1.cisco.com | 0151.0250.0002 |    333 |
 | 0151.0250.0002 | mrstn-5502-2.cisco.com | 0151.0250.0001 |     10 |
 +----------------+------------------------+----------------+--------+
+```
+
+### BGP Neighbors
+
+From [showtable](example/showtable) example:
+
+```console
+$ ./showtable -f ../../input/bgp-nbr.json -i bgp-nbr
++------------------------+------------------+-------+--------------+----------+---------+---------+
+|        HOSTNAME        |     NEIGHBOR     |  ASN  |    STATE     | PFX RCVD | PFX ADV | MAX PFX |
++------------------------+------------------+-------+--------------+----------+---------+---------+
+| mrstn-5502-1.cisco.com | 2001:db8:cafe::2 | 64512 | bgp-st-estab |        7 |       8 |  524288 |
+| mrstn-5502-1.cisco.com | 2001:f00:bb::2   | 64512 | bgp-st-estab |        7 |       8 |  524288 |
++------------------------+------------------+-------+--------------+----------+---------+---------+
+```
+
+```console
+$ ./showtable -f ../../input/bgp-nbr2.json -i bgp-nbr
++------------------------+------------------+-------+--------------+----------+---------+---------+
+|        HOSTNAME        |     NEIGHBOR     |  ASN  |    STATE     | PFX RCVD | PFX ADV | MAX PFX |
++------------------------+------------------+-------+--------------+----------+---------+---------+
+| mrstn-5502-2.cisco.com | 2001:db8:cafe::1 | 64512 | bgp-st-estab |        6 |       9 |  524288 |
+| mrstn-5502-2.cisco.com | 2001:f00:bb::1   | 64512 | bgp-st-estab |        6 |       9 |  524288 |
++------------------------+------------------+-------+--------------+----------+---------+---------+
 ```
 
 ### Interface Counters

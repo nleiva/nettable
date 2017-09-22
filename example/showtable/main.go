@@ -28,6 +28,8 @@ func main() {
 		container = new(nt.Inbrs)
 	case "isis-lsp":
 		container = new(nt.ILSPs)
+	case "bgp-nbr":
+		container = new(nt.Bnbrs)
 	case "int-count":
 		container = new(nt.Icounts)
 	case "int-rate":
